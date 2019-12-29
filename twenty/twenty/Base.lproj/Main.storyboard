@@ -697,12 +697,15 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8DE-PQ-mj3">
-                                <rect key="frame" x="18" y="33" width="129" height="18"/>
+                                <rect key="frame" x="18" y="33" width="119" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Launch at startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Afz-rP-Egc">
+                                <buttonCell key="cell" type="check" title="Launch at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Afz-rP-Egc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="launchAtLoginPressed:" target="XfG-lQ-9wD" id="n4N-gl-tcA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -711,12 +714,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="launchAtLogin" destination="8DE-PQ-mj3" id="e8i-xe-EO5"/>
                         <outlet property="output" destination="CfQ-RF-aIb" id="Nu4-q0-CiJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="214"/>
+            <point key="canvasLocation" x="-41" y="298"/>
         </scene>
     </scenes>
 </document>

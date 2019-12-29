@@ -16,19 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.button?.title = "👀"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
-        
-//        // Check if the launcher app is started
-//        var startedAtLogin = false
-//        for app in NSWorkspace.shared().runningApplications {
-//            if app.bundleIdentifier == NCConstants.launcherApplicationIdentifier {
-//                startedAtLogin = true
-//            }
-//        }
-//
-//        // If the app's started, post to the notification center to kill the launcher app
-//        if startedAtLogin {
-//            DistributedNotificationCenter.default().postNotificationName(NCConstants.KILLME, object: Bundle.main.bundleIdentifier, userInfo: nil, options: DistributedNotificationCenter.Options.deliverImmediately)
-//        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

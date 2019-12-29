@@ -13,7 +13,7 @@
 		20B795FD23B411DA0042B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B795FB23B411DA0042B081 /* Main.storyboard */; };
 		20B7960923B411DB0042B081 /* twentyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7960823B411DB0042B081 /* twentyTests.swift */; };
 		20B7961423B411DB0042B081 /* twentyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7961323B411DB0042B081 /* twentyUITests.swift */; };
-		20B7963423B908590042B081 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7963223B908210042B081 /* ServiceManagement.framework */; };
+		20B7963B23B911740042B081 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7963A23B911730042B081 /* LaunchAtLogin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		20B7960F23B411DB0042B081 /* twentyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twentyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B7961323B411DB0042B081 /* twentyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentyUITests.swift; sourceTree = "<group>"; };
 		20B7961523B411DB0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20B7963223B908210042B081 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		20B7963A23B911730042B081 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B7963423B908590042B081 /* ServiceManagement.framework in Frameworks */,
+				20B7963B23B911740042B081 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,7 @@
 		20B7963123B908210042B081 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				20B7963223B908210042B081 /* ServiceManagement.framework */,
+				20B7963A23B911730042B081 /* LaunchAtLogin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +146,8 @@
 				20B795EE23B411D60042B081 /* Sources */,
 				20B795EF23B411D60042B081 /* Frameworks */,
 				20B795F023B411D60042B081 /* Resources */,
-				20B7963523B90BC00042B081 /* ShellScript */,
+				20B7963C23B911AC0042B081 /* ShellScript */,
+				20B7963D23B959200042B081 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -263,7 +264,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20B7963523B90BC00042B081 /* ShellScript */ = {
+		20B7963C23B911AC0042B081 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/LaunchAtLogin.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		20B7963D23B959200042B081 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,6 +474,10 @@
 				CODE_SIGN_ENTITLEMENTS = twenty/twenty.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = twenty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,6 +496,10 @@
 				CODE_SIGN_ENTITLEMENTS = twenty/twenty.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = twenty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

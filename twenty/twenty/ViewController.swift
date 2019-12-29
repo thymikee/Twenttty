@@ -18,6 +18,7 @@ enum Status {
 
 class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var output: NSTextField!
+    @IBOutlet weak var launchAtLogin: NSButton!
     var activityCheckInterval: Double = 1
     var activityTime: Double = 10 // 60 * 20
     var breakTime: Double = 5 // 20
@@ -29,15 +30,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(LaunchAtLogin.isEnabled)
-        //=> false
-
-        LaunchAtLogin.isEnabled = true
-
-        print(LaunchAtLogin.isEnabled)
-        //=> true
-        
         initialize()
+        
+        launchAtLogin.intValue = LaunchAtLogin.isEnabled ? 1 : 0
         
         registerNotifications()
         
@@ -112,6 +107,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     func getSystemEventsCount() -> UInt32 {
         return CGEventSource.counterForEventType(CGEventSourceStateID.combinedSessionState, eventType: CGEventType.mouseMoved)
+    }
+    
+    @IBAction func launchAtLoginPressed(_ sender: NSButton) {
+        LaunchAtLogin.isEnabled = (sender.intValue as NSNumber).boolValue
     }
 }
 
