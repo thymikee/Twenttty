@@ -14,6 +14,7 @@
 		20B7960923B411DB0042B081 /* twentyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7960823B411DB0042B081 /* twentyTests.swift */; };
 		20B7961423B411DB0042B081 /* twentyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7961323B411DB0042B081 /* twentyUITests.swift */; };
 		20B7963B23B911740042B081 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7963A23B911730042B081 /* LaunchAtLogin.framework */; };
+		20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7963E23B964660042B081 /* ActivityStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		20B7961323B411DB0042B081 /* twentyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentyUITests.swift; sourceTree = "<group>"; };
 		20B7961523B411DB0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B7963A23B911730042B081 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
+		20B7963E23B964660042B081 /* ActivityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				20B795F523B411D60042B081 /* AppDelegate.swift */,
 				20B795F723B411D60042B081 /* ViewController.swift */,
+				20B7963E23B964660042B081 /* ActivityStatus.swift */,
 				20B795F923B411DA0042B081 /* Assets.xcassets */,
 				20B795FB23B411DA0042B081 /* Main.storyboard */,
 				20B795FE23B411DA0042B081 /* Info.plist */,
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */,
 				20B795F823B411D60042B081 /* ViewController.swift in Sources */,
 				20B795F623B411D60042B081 /* AppDelegate.swift in Sources */,
 			);

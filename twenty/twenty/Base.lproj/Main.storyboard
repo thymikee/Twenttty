@@ -685,19 +685,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="twenty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="110"/>
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="95"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CfQ-RF-aIb">
-                                <rect key="frame" x="20" y="69" width="218" height="21"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="cOP-b4-05V">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8DE-PQ-mj3">
-                                <rect key="frame" x="18" y="33" width="119" height="18"/>
+                                <rect key="frame" x="18" y="59" width="119" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Launch at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Afz-rP-Egc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -708,19 +700,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="CfQ-RF-aIb" secondAttribute="trailing" constant="20" id="kEc-I2-p6y"/>
-                            <constraint firstItem="CfQ-RF-aIb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="m7P-fd-O0g"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="launchAtLogin" destination="8DE-PQ-mj3" id="e8i-xe-EO5"/>
-                        <outlet property="output" destination="CfQ-RF-aIb" id="Nu4-q0-CiJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="298"/>
+            <point key="canvasLocation" x="-41" y="290.5"/>
         </scene>
     </scenes>
 </document>

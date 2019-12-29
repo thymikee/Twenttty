@@ -10,6 +10,7 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    let activityStatus = ActivityStatus()
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -20,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        activityStatus.dispose()
     }
 
     @objc func showSettings() {
