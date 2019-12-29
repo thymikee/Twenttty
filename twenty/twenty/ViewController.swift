@@ -12,6 +12,7 @@ import LaunchAtLogin
 
 class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var launchAtLogin: NSButton!
+    var activityStatus: ActivityStatus! // injected from AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,7 +20,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
         activityStatus.dispose()
     }
 
@@ -29,6 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
             fatalError("Unable to find ViewController")
         }
+        
+        vc.activityStatus = activityStatus
         
         let popoverView = NSPopover()
         popoverView.contentViewController = vc

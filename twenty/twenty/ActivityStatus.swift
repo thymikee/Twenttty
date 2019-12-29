@@ -17,14 +17,14 @@ enum Status {
 }
 
 class ActivityStatus {
-    let activityCheckInterval: Double = 1
-    let activityTime: Double = 10 // 60 * 20
-    let breakTime: Double = 5 // 20
+    var activityCheckInterval: Double = 1
+    var activityTime: Double = 10 // 60 * 20
+    var breakTime: Double = 5 // 20
     var systemEventsCount: UInt32 = 0
     var activityMonitorTimer: Timer = Timer()
     var activityTimer: Timer = Timer()
     var breakTimer: Timer = Timer()
-    var activityStatus: Status = Status.Inactive
+    var status: Status = Status.Inactive
     
     init() {
         systemEventsCount = getSystemEventsCount()
@@ -40,13 +40,13 @@ class ActivityStatus {
     
     func startActivityMonitoring() {
         activityMonitorTimer = Timer.scheduledTimer(withTimeInterval: activityCheckInterval, repeats: true, block: { _ in
-            if (self.activityStatus == Status.Break) {
+            if (self.status == Status.Break) {
                 //
             } else if (self.systemEventsCount != self.getSystemEventsCount()) {
-                if (self.activityStatus != Status.Active) {
+                if (self.status != Status.Active) {
                     self.startActivity()
                 }
-                self.activityStatus = Status.Active
+                self.status = Status.Active
             }
             
             self.systemEventsCount = self.getSystemEventsCount()
@@ -64,11 +64,11 @@ class ActivityStatus {
     
     func startBreak() {
         NSLog("break")
-        activityStatus = Status.Break
+        status = Status.Break
         scheduleNotification()
         breakTimer = Timer.scheduledTimer(withTimeInterval: breakTime, repeats: false, block: { _ in
             NSLog("break end")
-            self.activityStatus = Status.Inactive
+            self.status = Status.Inactive
         })
     }
     
