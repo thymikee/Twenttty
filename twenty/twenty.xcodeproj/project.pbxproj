@@ -13,6 +13,7 @@
 		20B795FD23B411DA0042B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B795FB23B411DA0042B081 /* Main.storyboard */; };
 		20B7960923B411DB0042B081 /* twentyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7960823B411DB0042B081 /* twentyTests.swift */; };
 		20B7961423B411DB0042B081 /* twentyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7961323B411DB0042B081 /* twentyUITests.swift */; };
+		20B7963423B908590042B081 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7963223B908210042B081 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* Begin PBXFileReference section */
 		20B795F223B411D60042B081 /* twenty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twenty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B795F523B411D60042B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20B795F723B411D60042B081 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20B795F723B411D60042B081 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		20B795F923B411DA0042B081 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B795FC23B411DA0042B081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B795FE23B411DA0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		20B7960F23B411DB0042B081 /* twentyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twentyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B7961323B411DB0042B081 /* twentyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentyUITests.swift; sourceTree = "<group>"; };
 		20B7961523B411DB0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B7963223B908210042B081 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B7963423B908590042B081 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,7 @@
 				20B7960723B411DB0042B081 /* twentyTests */,
 				20B7961223B411DB0042B081 /* twentyUITests */,
 				20B795F323B411D60042B081 /* Products */,
+				20B7963123B908210042B081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +128,14 @@
 			path = twentyUITests;
 			sourceTree = "<group>";
 		};
+		20B7963123B908210042B081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20B7963223B908210042B081 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +146,7 @@
 				20B795EE23B411D60042B081 /* Sources */,
 				20B795EF23B411D60042B081 /* Frameworks */,
 				20B795F023B411D60042B081 /* Resources */,
+				20B7963523B90BC00042B081 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -248,6 +261,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20B7963523B90BC00042B081 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20B795EE23B411D60042B081 /* Sources */ = {
