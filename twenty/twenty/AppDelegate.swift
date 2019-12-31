@@ -14,9 +14,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItem.button?.title = "👀"
+        let initialTitle = "👀"
+        statusItem.button?.title = initialTitle
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            if (self.activityStatus.status == Status.Break) {
+                let formatter = DateComponentsFormatter()
+                formatter.unitsStyle = .positional
+                formatter.allowedUnits = [.minute, .second]
+                formatter.zeroFormattingBehavior = .pad
+                
+                let now = Date()
+                let targetDate = self.activityStatus.breakTimer.fireDate
+                let formattedTimeLeft = formatter.string(from: now, to: targetDate) ?? ""
+                
+                self.statusItem.button?.title = formattedTimeLeft + " " + initialTitle
+            } else {
+                self.statusItem.button?.title = initialTitle
+            }
+        })
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

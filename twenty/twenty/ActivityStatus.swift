@@ -10,7 +10,7 @@ import Foundation
 import UserNotifications
 import LaunchAtLogin
 
-enum Status {
+enum Status: String {
     case Inactive
     case Active
     case Break

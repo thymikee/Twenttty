@@ -685,12 +685,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="twenty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="95"/>
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="161"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8DE-PQ-mj3">
-                                <rect key="frame" x="18" y="59" width="119" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8DE-PQ-mj3">
+                                <rect key="frame" x="18" y="18" width="119" height="18"/>
                                 <buttonCell key="cell" type="check" title="Launch at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Afz-rP-Egc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -699,15 +698,58 @@
                                     <action selector="launchAtLoginPressed:" target="XfG-lQ-9wD" id="n4N-gl-tcA"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-BQ-6ZO">
+                                <rect key="frame" x="18" y="75" width="222" height="30"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="00:00:00" id="fti-eq-dJj">
+                                    <font key="font" metaFont="system" size="26"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="AKA-v4-4wL">
+                                <rect key="frame" x="20" y="125" width="16" height="16"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSStatusNone" id="HcM-5h-kSd"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-R9-6N3">
+                                <rect key="frame" x="39" y="125" width="52" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Inactive" id="oG7-O4-YaM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6on-l9-b5y">
+                                <rect key="frame" x="20" y="52" width="218" height="5"/>
+                            </box>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="QWD-BQ-6ZO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="APa-dM-Kz5"/>
+                            <constraint firstAttribute="trailing" secondItem="QWD-BQ-6ZO" secondAttribute="trailing" constant="20" id="BZL-Ry-pla"/>
+                            <constraint firstItem="QWD-BQ-6ZO" firstAttribute="top" secondItem="gl2-R9-6N3" secondAttribute="bottom" constant="20" id="C9o-4z-0fm"/>
+                            <constraint firstAttribute="trailing" secondItem="6on-l9-b5y" secondAttribute="trailing" constant="20" id="FuC-iD-yam"/>
+                            <constraint firstItem="6on-l9-b5y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="OeH-j5-tlg"/>
+                            <constraint firstItem="AKA-v4-4wL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Wb7-tI-Pvy"/>
+                            <constraint firstItem="gl2-R9-6N3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="YGH-sM-amN"/>
+                            <constraint firstItem="gl2-R9-6N3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="ZWy-Rl-RSQ"/>
+                            <constraint firstItem="gl2-R9-6N3" firstAttribute="leading" secondItem="AKA-v4-4wL" secondAttribute="trailing" constant="5" id="irY-g6-ilb"/>
+                            <constraint firstItem="AKA-v4-4wL" firstAttribute="centerY" secondItem="gl2-R9-6N3" secondAttribute="centerY" id="kTl-FR-rYs"/>
+                            <constraint firstItem="6on-l9-b5y" firstAttribute="top" secondItem="QWD-BQ-6ZO" secondAttribute="bottom" constant="20" id="l3a-2H-zGJ"/>
+                            <constraint firstItem="8DE-PQ-mj3" firstAttribute="top" secondItem="6on-l9-b5y" secondAttribute="bottom" constant="20" id="x8D-Yk-PTt"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="launchAtLogin" destination="8DE-PQ-mj3" id="e8i-xe-EO5"/>
+                        <outlet property="statusImage" destination="AKA-v4-4wL" id="bLA-8w-N43"/>
+                        <outlet property="statusLabel" destination="gl2-R9-6N3" id="kPh-0s-Vb2"/>
+                        <outlet property="timer" destination="QWD-BQ-6ZO" id="2Zg-Ar-z2d"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="290.5"/>
+            <point key="canvasLocation" x="-41" y="323.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSStatusNone" width="16" height="16"/>
+    </resources>
 </document>
