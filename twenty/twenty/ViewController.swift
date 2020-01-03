@@ -37,7 +37,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         interval.invalidate()
     }
     
-    func displayTimer() {        
+    func displayTimer() {
         if (activityStatus.activityTimer.isValid || activityStatus.breakTimer.isValid) {
             let formatter = DateComponentsFormatter()
             formatter.unitsStyle = .positional

@@ -29,16 +29,31 @@ class ActivityStatus {
     init() {
         systemEventsCount = getSystemEventsCount()
         registerNotifications()
+        subscribeToLockScreen()
         startActivityMonitoring()
     }
     
     func dispose() {
+        status = Status.Inactive
         activityMonitorTimer.invalidate()
         activityTimer.invalidate()
         breakTimer.invalidate()
     }
     
+    func subscribeToLockScreen() {
+        let dnc = DistributedNotificationCenter.default()
+
+        dnc.addObserver(forName: .init("com.apple.screenIsLocked"), object: nil, queue: .main) { _ in
+            self.dispose()
+        }
+        
+        dnc.addObserver(forName: .init("com.apple.screenIsUnlocked"), object: nil, queue: .main) { _ in
+            self.startActivityMonitoring()
+        }
+    }
+    
     func startActivityMonitoring() {
+        print("start")
         activityMonitorTimer = Timer.scheduledTimer(withTimeInterval: activityCheckInterval, repeats: true, block: { _ in
             if (self.status == Status.Break) {
                 // do nothing
