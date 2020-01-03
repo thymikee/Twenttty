@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.button?.action = #selector(showSettings)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            if (self.activityStatus.status == Status.Break) {
+            if (self.activityStatus.status == Status.Break && self.activityStatus.breakTimer.isValid) {
                 let formatter = DateComponentsFormatter()
                 formatter.unitsStyle = .positional
                 formatter.allowedUnits = [.minute, .second]

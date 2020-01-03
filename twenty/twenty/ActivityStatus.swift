@@ -18,12 +18,12 @@ enum Status: String {
 
 class ActivityStatus {
     var activityCheckInterval: Double = 1
-    var activityTime: Double = 10 // 60 * 20
-    var breakTime: Double = 5 // 20
+    var activityTime: Double = 60 * 20
+    var breakTime: Double = 20
     var systemEventsCount: UInt32 = 0
-    var activityMonitorTimer: Timer = Timer()
-    var activityTimer: Timer = Timer()
-    var breakTimer: Timer = Timer()
+    var activityMonitorTimer = Timer()
+    var activityTimer = Timer()
+    var breakTimer = Timer()
     var status: Status = Status.Inactive
     
     init() {
@@ -41,7 +41,7 @@ class ActivityStatus {
     func startActivityMonitoring() {
         activityMonitorTimer = Timer.scheduledTimer(withTimeInterval: activityCheckInterval, repeats: true, block: { _ in
             if (self.status == Status.Break) {
-                //
+                // do nothing
             } else if (self.systemEventsCount != self.getSystemEventsCount()) {
                 if (self.status != Status.Active) {
                     self.startActivity()
@@ -54,21 +54,18 @@ class ActivityStatus {
     }
     
     func startActivity() {
-        NSLog("activity")
         activityTimer.invalidate()
-        
         activityTimer = Timer.scheduledTimer(withTimeInterval: activityTime, repeats: false, block: { _ in
             self.startBreak()
         })
     }
     
     func startBreak() {
-        NSLog("break")
         status = Status.Break
         scheduleNotification()
         breakTimer = Timer.scheduledTimer(withTimeInterval: breakTime, repeats: false, block: { _ in
-            NSLog("break end")
             self.status = Status.Inactive
+            NSSound(named: "Autopilot Disengage.wav")?.play()
         })
     }
     
@@ -87,7 +84,7 @@ class ActivityStatus {
         let content = UNMutableNotificationContent()
         content.body = "Time for an eye break"
         content.categoryIdentifier = "alarm"
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Autopilot Engage.wav"))
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
 
@@ -96,6 +93,6 @@ class ActivityStatus {
     }
 
     func getSystemEventsCount() -> UInt32 {
-        return CGEventSource.counterForEventType(CGEventSourceStateID.combinedSessionState, eventType: CGEventType.mouseMoved)
+        return CGEventSource.counterForEventType(CGEventSourceStateID.combinedSessionState, eventType: CGEventType.mouseMoved) + CGEventSource.counterForEventType(CGEventSourceStateID.combinedSessionState, eventType: CGEventType.keyDown)
     }
 }

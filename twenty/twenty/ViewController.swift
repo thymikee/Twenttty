@@ -23,30 +23,39 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         launchAtLogin.intValue = LaunchAtLogin.isEnabled ? 1 : 0
         
+        self.displayStatus()
+        self.displayTimer()
+        
         interval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            let formatter = DateComponentsFormatter()
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [.hour, .minute, .second]
-            formatter.zeroFormattingBehavior = .pad
-
-            let now = Date()
-            let targetDate = self.activityStatus.status == Status.Active ? self.activityStatus.activityTimer.fireDate : self.activityStatus.breakTimer.fireDate
-            let formattedTimeLeft = formatter.string(from: now, to: targetDate)
-            
-            self.statusLabel.stringValue = self.activityStatus.status.rawValue
-            self.statusImage.image = self.mapStatusToImage(self.activityStatus.status)
-            
-            if (self.activityStatus.activityTimer.isValid || self.activityStatus.breakTimer.isValid) {
-                self.timer.stringValue = formattedTimeLeft ?? "00:00:00"
-            } else {
-                self.timer.stringValue = "00:00:00"
-            }
+            self.displayStatus()
+            self.displayTimer()
         })
         
     }
     
     override func viewDidDisappear() {
         interval.invalidate()
+    }
+    
+    func displayTimer() {        
+        if (activityStatus.activityTimer.isValid || activityStatus.breakTimer.isValid) {
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .positional
+            formatter.allowedUnits = [.hour, .minute, .second]
+            formatter.zeroFormattingBehavior = .pad
+
+            let now = Date()
+            let targetDate = activityStatus.status == Status.Active ? activityStatus.activityTimer.fireDate : activityStatus.breakTimer.fireDate
+            let formattedTimeLeft = formatter.string(from: now, to: targetDate)
+            timer.stringValue = formattedTimeLeft ?? "00:00:00"
+        } else {
+            timer.stringValue = "00:00:00"
+        }
+    }
+    
+    func displayStatus() {
+        statusLabel.stringValue = activityStatus.status.rawValue
+        statusImage.image = mapStatusToImage(activityStatus.status)
     }
     
     func mapStatusToImage(_ status: Status) -> NSImage {

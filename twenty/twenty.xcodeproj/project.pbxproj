@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204C9F0C23BFD05E00FD462F /* Autopilot Disengage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */; };
+		204C9F0E23BFD0C900FD462F /* Autopilot Engage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 204C9F0D23BFD0C900FD462F /* Autopilot Engage.wav */; };
 		20B795F623B411D60042B081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F523B411D60042B081 /* AppDelegate.swift */; };
 		20B795F823B411D60042B081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F723B411D60042B081 /* ViewController.swift */; };
 		20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B795F923B411DA0042B081 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Autopilot Disengage.wav"; path = "../../../../../Downloads/Autopilot Disengage.wav"; sourceTree = "<group>"; };
+		204C9F0D23BFD0C900FD462F /* Autopilot Engage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Autopilot Engage.wav"; path = "../../../../../Downloads/Autopilot Engage.wav"; sourceTree = "<group>"; };
 		20B795F223B411D60042B081 /* twenty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twenty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B795F523B411D60042B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B795F723B411D60042B081 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -102,6 +106,8 @@
 		20B795F423B411D60042B081 /* twenty */ = {
 			isa = PBXGroup;
 			children = (
+				204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */,
+				204C9F0D23BFD0C900FD462F /* Autopilot Engage.wav */,
 				20B795F523B411D60042B081 /* AppDelegate.swift */,
 				20B795F723B411D60042B081 /* ViewController.swift */,
 				20B7963E23B964660042B081 /* ActivityStatus.swift */,
@@ -245,7 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204C9F0E23BFD0C900FD462F /* Autopilot Engage.wav in Resources */,
 				20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */,
+				204C9F0C23BFD05E00FD462F /* Autopilot Disengage.wav in Resources */,
 				20B795FD23B411DA0042B081 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
