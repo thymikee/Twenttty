@@ -53,7 +53,6 @@ class ActivityStatus {
     }
     
     func startActivityMonitoring() {
-        print("start")
         activityMonitorTimer = Timer.scheduledTimer(withTimeInterval: activityCheckInterval, repeats: true, block: { _ in
             if (self.status == Status.Break) {
                 // do nothing
