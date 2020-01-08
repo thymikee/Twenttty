@@ -14,27 +14,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let initialTitle = "👀"
-        statusItem.button?.title = initialTitle
+        let icon = NSImage(named: "0")
+        icon?.isTemplate = true
+        statusItem.button?.image = icon
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            if (self.activityStatus.status == Status.Break && self.activityStatus.breakTimer.isValid) {
-                let formatter = DateComponentsFormatter()
-                formatter.unitsStyle = .positional
-                formatter.allowedUnits = [.minute, .second]
-                formatter.zeroFormattingBehavior = .pad
-                
-                let now = Date()
-                let targetDate = self.activityStatus.breakTimer.fireDate
-                let formattedTimeLeft = formatter.string(from: now, to: targetDate) ?? ""
-                
-                self.statusItem.button?.title = formattedTimeLeft + " " + initialTitle
+            if (self.activityStatus.activityTimer.isValid) {
+                let timeLeft = abs(Date().timeIntervalSince(self.activityStatus.activityTimer.fireDate))
+                let iconName = self.getImageForTimeLeft(timeLeft, self.activityStatus.activityTime)
+                let icon = NSImage(named: iconName)
+                icon?.isTemplate = true
+                self.statusItem.button?.image = icon
+                self.statusItem.button?.contentTintColor = nil
+            } else if (self.activityStatus.breakTimer.isValid) {
+                let timeLeft = abs(Date().timeIntervalSince(self.activityStatus.breakTimer.fireDate))
+                let iconName = self.getImageForTimeLeft(timeLeft, self.activityStatus.breakTime)
+                let icon = NSImage(named: iconName)
+                icon?.isTemplate = true
+                self.statusItem.button?.image = icon
+                self.statusItem.button?.contentTintColor = NSColor.red
             } else {
-                self.statusItem.button?.title = initialTitle
+                self.statusItem.button?.image = icon
+                self.statusItem.button?.contentTintColor = nil
             }
         })
+    }
+    
+    func getImageForTimeLeft(_ timeLeft: TimeInterval, _ base: Double) -> String {
+        let timePercent = timeLeft / base
+        return String(Int(floor((1 - timePercent) * 12)))
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
