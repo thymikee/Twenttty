@@ -13,28 +13,9 @@
 		20B795F823B411D60042B081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F723B411D60042B081 /* ViewController.swift */; };
 		20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B795F923B411DA0042B081 /* Assets.xcassets */; };
 		20B795FD23B411DA0042B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B795FB23B411DA0042B081 /* Main.storyboard */; };
-		20B7960923B411DB0042B081 /* twentyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7960823B411DB0042B081 /* twentyTests.swift */; };
-		20B7961423B411DB0042B081 /* twentyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7961323B411DB0042B081 /* twentyUITests.swift */; };
 		20B7963B23B911740042B081 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7963A23B911730042B081 /* LaunchAtLogin.framework */; };
 		20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7963E23B964660042B081 /* ActivityStatus.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		20B7960523B411DB0042B081 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 20B795EA23B411D60042B081 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 20B795F123B411D60042B081;
-			remoteInfo = twenty;
-		};
-		20B7961023B411DB0042B081 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 20B795EA23B411D60042B081 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 20B795F123B411D60042B081;
-			remoteInfo = twenty;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Autopilot Disengage.wav"; path = "../../../../../Downloads/Autopilot Disengage.wav"; sourceTree = "<group>"; };
@@ -46,12 +27,6 @@
 		20B795FC23B411DA0042B081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B795FE23B411DA0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B795FF23B411DA0042B081 /* twenty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = twenty.entitlements; sourceTree = "<group>"; };
-		20B7960423B411DB0042B081 /* twentyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twentyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20B7960823B411DB0042B081 /* twentyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentyTests.swift; sourceTree = "<group>"; };
-		20B7960A23B411DB0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20B7960F23B411DB0042B081 /* twentyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twentyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20B7961323B411DB0042B081 /* twentyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentyUITests.swift; sourceTree = "<group>"; };
-		20B7961523B411DB0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B7963A23B911730042B081 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		20B7963E23B964660042B081 /* ActivityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,20 +40,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		20B7960123B411DB0042B081 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		20B7960C23B411DB0042B081 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,8 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				20B795F423B411D60042B081 /* twenty */,
-				20B7960723B411DB0042B081 /* twentyTests */,
-				20B7961223B411DB0042B081 /* twentyUITests */,
 				20B795F323B411D60042B081 /* Products */,
 				20B7963123B908210042B081 /* Frameworks */,
 			);
@@ -97,8 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				20B795F223B411D60042B081 /* twenty.app */,
-				20B7960423B411DB0042B081 /* twentyTests.xctest */,
-				20B7960F23B411DB0042B081 /* twentyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,24 +74,6 @@
 				20B795FF23B411DA0042B081 /* twenty.entitlements */,
 			);
 			path = twenty;
-			sourceTree = "<group>";
-		};
-		20B7960723B411DB0042B081 /* twentyTests */ = {
-			isa = PBXGroup;
-			children = (
-				20B7960823B411DB0042B081 /* twentyTests.swift */,
-				20B7960A23B411DB0042B081 /* Info.plist */,
-			);
-			path = twentyTests;
-			sourceTree = "<group>";
-		};
-		20B7961223B411DB0042B081 /* twentyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				20B7961323B411DB0042B081 /* twentyUITests.swift */,
-				20B7961523B411DB0042B081 /* Info.plist */,
-			);
-			path = twentyUITests;
 			sourceTree = "<group>";
 		};
 		20B7963123B908210042B081 /* Frameworks */ = {
@@ -167,42 +106,6 @@
 			productReference = 20B795F223B411D60042B081 /* twenty.app */;
 			productType = "com.apple.product-type.application";
 		};
-		20B7960323B411DB0042B081 /* twentyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 20B7961B23B411DB0042B081 /* Build configuration list for PBXNativeTarget "twentyTests" */;
-			buildPhases = (
-				20B7960023B411DB0042B081 /* Sources */,
-				20B7960123B411DB0042B081 /* Frameworks */,
-				20B7960223B411DB0042B081 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				20B7960623B411DB0042B081 /* PBXTargetDependency */,
-			);
-			name = twentyTests;
-			productName = twentyTests;
-			productReference = 20B7960423B411DB0042B081 /* twentyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		20B7960E23B411DB0042B081 /* twentyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 20B7961E23B411DB0042B081 /* Build configuration list for PBXNativeTarget "twentyUITests" */;
-			buildPhases = (
-				20B7960B23B411DB0042B081 /* Sources */,
-				20B7960C23B411DB0042B081 /* Frameworks */,
-				20B7960D23B411DB0042B081 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				20B7961123B411DB0042B081 /* PBXTargetDependency */,
-			);
-			name = twentyUITests;
-			productName = twentyUITests;
-			productReference = 20B7960F23B411DB0042B081 /* twentyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,14 +118,6 @@
 				TargetAttributes = {
 					20B795F123B411D60042B081 = {
 						CreatedOnToolsVersion = 11.3;
-					};
-					20B7960323B411DB0042B081 = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = 20B795F123B411D60042B081;
-					};
-					20B7960E23B411DB0042B081 = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = 20B795F123B411D60042B081;
 					};
 				};
 			};
@@ -240,8 +135,6 @@
 			projectRoot = "";
 			targets = (
 				20B795F123B411D60042B081 /* twenty */,
-				20B7960323B411DB0042B081 /* twentyTests */,
-				20B7960E23B411DB0042B081 /* twentyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,20 +148,6 @@
 				20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */,
 				204C9F0C23BFD05E00FD462F /* Autopilot Disengage.wav in Resources */,
 				20B795FD23B411DA0042B081 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		20B7960223B411DB0042B081 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		20B7960D23B411DB0042B081 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,36 +202,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		20B7960023B411DB0042B081 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20B7960923B411DB0042B081 /* twentyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		20B7960B23B411DB0042B081 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20B7961423B411DB0042B081 /* twentyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		20B7960623B411DB0042B081 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 20B795F123B411D60042B081 /* twenty */;
-			targetProxy = 20B7960523B411DB0042B081 /* PBXContainerItemProxy */;
-		};
-		20B7961123B411DB0042B081 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 20B795F123B411D60042B081 /* twenty */;
-			targetProxy = 20B7961023B411DB0042B081 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		20B795FB23B411DA0042B081 /* Main.storyboard */ = {
@@ -523,86 +373,6 @@
 			};
 			name = Release;
 		};
-		20B7961C23B411DB0042B081 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = twentyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = thymikee.twentyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twenty.app/Contents/MacOS/twenty";
-			};
-			name = Debug;
-		};
-		20B7961D23B411DB0042B081 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = twentyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = thymikee.twentyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twenty.app/Contents/MacOS/twenty";
-			};
-			name = Release;
-		};
-		20B7961F23B411DB0042B081 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = twentyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = thymikee.twentyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = twenty;
-			};
-			name = Debug;
-		};
-		20B7962023B411DB0042B081 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = twentyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = thymikee.twentyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = twenty;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -620,24 +390,6 @@
 			buildConfigurations = (
 				20B7961923B411DB0042B081 /* Debug */,
 				20B7961A23B411DB0042B081 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		20B7961B23B411DB0042B081 /* Build configuration list for PBXNativeTarget "twentyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				20B7961C23B411DB0042B081 /* Debug */,
-				20B7961D23B411DB0042B081 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		20B7961E23B411DB0042B081 /* Build configuration list for PBXNativeTarget "twentyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				20B7961F23B411DB0042B081 /* Debug */,
-				20B7962023B411DB0042B081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
