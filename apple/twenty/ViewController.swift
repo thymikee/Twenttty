@@ -15,19 +15,27 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var statusImage: NSImageView!
     @IBOutlet weak var preferences: NSButton!
+    @IBOutlet weak var appVersionLabel: NSTextField!
+    @IBOutlet weak var warningCenter: NSImageView!
     var activityStatus: ActivityStatus! // injected from AppDelegate
     var interval: Timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.displayStatus()
-        self.displayTimer()
+        setupAppName()
+        displayStatus()
+        displayTimer()
+        updateWarningCenter()
         
         interval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.displayStatus()
             self.displayTimer()
         })
+    }
+    
+    override func viewDidDisappear() {
+        interval.invalidate()
     }
     
     @IBAction func onPreferencesPress(_ sender: NSButton) {
@@ -64,8 +72,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         exit(0)
     }
     
-    override func viewDidDisappear() {
-        interval.invalidate()
+    func updateWarningCenter() {
+        self.warningCenter.isHidden = self.activityStatus.breakNotification.isGranted
+        self.warningCenter.toolTip = "Warnings:\nCan't notify you when to have a break :(. Please allow notifications for TwentyTwenty in System Preferences > Notifications."
+    }
+    
+    func setupAppName() {
+        let name = Bundle.main.infoDictionary!["CFBundleName"] as! String
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        appVersionLabel.stringValue = name + " v" + version
     }
     
     func displayTimer() {
@@ -100,4 +115,3 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
     }
 }
-

@@ -685,11 +685,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="twenty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="147"/>
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-BQ-6ZO">
-                                <rect key="frame" x="18" y="61" width="222" height="30"/>
+                                <rect key="frame" x="18" y="64" width="222" height="30"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="00:00:00" id="fti-eq-dJj">
                                     <font key="font" metaFont="system" size="26"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -697,11 +697,11 @@
                                 </textFieldCell>
                             </textField>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="AKA-v4-4wL">
-                                <rect key="frame" x="20" y="111" width="16" height="16"/>
+                                <rect key="frame" x="20" y="114" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSStatusNone" id="HcM-5h-kSd"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-R9-6N3">
-                                <rect key="frame" x="39" y="111" width="52" height="16"/>
+                                <rect key="frame" x="39" y="114" width="52" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Inactive" id="oG7-O4-YaM">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -709,21 +709,19 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6on-l9-b5y">
-                                <rect key="frame" x="20" y="38" width="218" height="5"/>
+                                <rect key="frame" x="20" y="41" width="218" height="5"/>
                             </box>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cli-HE-GK1">
-                                <rect key="frame" x="18" y="16" width="95" height="13"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cli-HE-GK1">
+                                <rect key="frame" x="18" y="20" width="95" height="13"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="TwentyTwenty v1.0" id="mmn-P5-q7W">
                                     <font key="font" metaFont="system" size="10"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZp-k4-6Br">
-                                <rect key="frame" x="216" y="12" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="bevel" alternateTitle="Preferences" bezelStyle="rounded" image="NSActionTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" inset="2" id="nGp-4R-bXk">
+                            <button toolTip="Preferences" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vZp-k4-6Br">
+                                <rect key="frame" x="224" y="20" width="14" height="14"/>
+                                <buttonCell key="cell" type="bevel" alternateTitle="Preferences" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" inset="2" id="nGp-4R-bXk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -731,34 +729,47 @@
                                     <action selector="onPreferencesPress:" target="XfG-lQ-9wD" id="TnL-on-ikt"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALX-dE-Hn7">
+                                <rect key="frame" x="202" y="20" width="14" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="2lE-Ca-97W"/>
+                            </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vZp-k4-6Br" secondAttribute="trailing" constant="20" id="0fE-5m-eGO"/>
                             <constraint firstItem="QWD-BQ-6ZO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="APa-dM-Kz5"/>
                             <constraint firstAttribute="trailing" secondItem="QWD-BQ-6ZO" secondAttribute="trailing" constant="20" id="BZL-Ry-pla"/>
                             <constraint firstItem="QWD-BQ-6ZO" firstAttribute="top" secondItem="gl2-R9-6N3" secondAttribute="bottom" constant="20" id="C9o-4z-0fm"/>
                             <constraint firstAttribute="trailing" secondItem="6on-l9-b5y" secondAttribute="trailing" constant="20" id="FuC-iD-yam"/>
                             <constraint firstItem="6on-l9-b5y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="OeH-j5-tlg"/>
                             <constraint firstItem="AKA-v4-4wL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Wb7-tI-Pvy"/>
+                            <constraint firstAttribute="bottom" secondItem="Cli-HE-GK1" secondAttribute="bottom" constant="20" id="XMa-n7-MFa"/>
                             <constraint firstItem="gl2-R9-6N3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="ZWy-Rl-RSQ"/>
+                            <constraint firstItem="Cli-HE-GK1" firstAttribute="top" secondItem="6on-l9-b5y" secondAttribute="bottom" constant="10" id="aVK-xZ-xkc"/>
+                            <constraint firstItem="vZp-k4-6Br" firstAttribute="centerY" secondItem="Cli-HE-GK1" secondAttribute="centerY" id="eKP-Vo-VfH"/>
                             <constraint firstItem="gl2-R9-6N3" firstAttribute="leading" secondItem="AKA-v4-4wL" secondAttribute="trailing" constant="5" id="irY-g6-ilb"/>
                             <constraint firstItem="AKA-v4-4wL" firstAttribute="centerY" secondItem="gl2-R9-6N3" secondAttribute="centerY" id="kTl-FR-rYs"/>
                             <constraint firstItem="6on-l9-b5y" firstAttribute="top" secondItem="QWD-BQ-6ZO" secondAttribute="bottom" constant="20" id="l3a-2H-zGJ"/>
+                            <constraint firstItem="Cli-HE-GK1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="uqs-mX-cNk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appVersionLabel" destination="Cli-HE-GK1" id="uSG-2c-jgh"/>
                         <outlet property="preferences" destination="vZp-k4-6Br" id="Y1c-oQ-wqr"/>
                         <outlet property="statusImage" destination="AKA-v4-4wL" id="bLA-8w-N43"/>
                         <outlet property="statusLabel" destination="gl2-R9-6N3" id="kPh-0s-Vb2"/>
                         <outlet property="timer" destination="QWD-BQ-6ZO" id="2Zg-Ar-z2d"/>
+                        <outlet property="warningCenter" destination="ALX-dE-Hn7" id="cnG-HA-dXJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="316.5"/>
+            <point key="canvasLocation" x="-41" y="316"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSCaution" width="32" height="32"/>
         <image name="NSStatusNone" width="16" height="16"/>
     </resources>
 </document>
