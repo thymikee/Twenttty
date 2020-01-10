@@ -11,17 +11,15 @@ import UserNotifications
 import LaunchAtLogin
 
 class ViewController: NSViewController, NSTextFieldDelegate {
-    @IBOutlet weak var launchAtLogin: NSButton!
     @IBOutlet weak var timer: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var statusImage: NSImageView!
+    @IBOutlet weak var preferences: NSButton!
     var activityStatus: ActivityStatus! // injected from AppDelegate
     var interval: Timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        launchAtLogin.intValue = LaunchAtLogin.isEnabled ? 1 : 0
         
         self.displayStatus()
         self.displayTimer()
@@ -30,7 +28,40 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             self.displayStatus()
             self.displayTimer()
         })
-        
+    }
+    
+    @IBAction func onPreferencesPress(_ sender: NSButton) {
+        let menu = NSMenu()
+        let launchAtLoginItem = NSMenuItem(
+            title: "Launch at Login",
+            action: #selector(toggleLaunchAtLogin),
+            keyEquivalent: ""
+        )
+        launchAtLoginItem.state = LaunchAtLogin.isEnabled ? NSControl.StateValue.on : NSControl.StateValue.off
+        launchAtLoginItem.target = self
+
+        let quitItem = NSMenuItem(
+            title: "Quit",
+            action: #selector(quitApp),
+            keyEquivalent: "q"
+        )
+        quitItem.target = self
+
+        menu.addItem(launchAtLoginItem)
+        menu.addItem(quitItem)
+        menu.popUp(
+            positioning: nil,
+            at: NSPoint(x: 0, y: sender.frame.height),
+            in: sender
+        )
+    }
+    
+    @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
+        LaunchAtLogin.isEnabled = !(sender.state as NSNumber).boolValue
+    }
+    
+    @objc func quitApp() {
+        exit(0)
     }
     
     override func viewDidDisappear() {
@@ -67,10 +98,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         default:
             return NSImage(named: "NSStatusNone")!
         }
-    }
-    
-    @IBAction func launchAtLoginPressed(_ sender: NSButton) {
-        LaunchAtLogin.isEnabled = (sender.intValue as NSNumber).boolValue
     }
 }
 
