@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import LaunchAtLogin
+import AppKit
 
 enum Status: String {
     case Inactive

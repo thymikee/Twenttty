@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppKit
 import UserNotifications
 
 class BreakNotification {
@@ -21,6 +22,11 @@ class BreakNotification {
     }
     
     func schedule() {
+        if (!isGranted) {
+            NSSound(named: "Autopilot Engage.wav")?.play()
+            return
+        }
+        
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
 

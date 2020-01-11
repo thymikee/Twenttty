@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import UserNotifications
 import LaunchAtLogin
 
 class ViewController: NSViewController, NSTextFieldDelegate {
@@ -16,7 +15,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var statusImage: NSImageView!
     @IBOutlet weak var preferences: NSButton!
     @IBOutlet weak var appVersionLabel: NSTextField!
-    @IBOutlet weak var warningCenter: NSImageView!
     var activityStatus: ActivityStatus! // injected from AppDelegate
     var interval: Timer = Timer()
 
@@ -26,7 +24,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         setupAppName()
         displayStatus()
         displayTimer()
-        updateWarningCenter()
         
         interval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.displayStatus()
@@ -70,11 +67,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     @objc func quitApp() {
         exit(0)
-    }
-    
-    func updateWarningCenter() {
-        self.warningCenter.isHidden = self.activityStatus.breakNotification.isGranted
-        self.warningCenter.toolTip = "Warnings:\nCan't notify you when to have a break :(. Please allow notifications for TwentyTwenty in System Preferences > Notifications."
     }
     
     func setupAppName() {

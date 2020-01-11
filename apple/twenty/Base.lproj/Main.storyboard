@@ -729,11 +729,6 @@
                                     <action selector="onPreferencesPress:" target="XfG-lQ-9wD" id="TnL-on-ikt"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALX-dE-Hn7">
-                                <rect key="frame" x="202" y="20" width="14" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="2lE-Ca-97W"/>
-                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vZp-k4-6Br" secondAttribute="trailing" constant="20" id="0fE-5m-eGO"/>
@@ -759,7 +754,6 @@
                         <outlet property="statusImage" destination="AKA-v4-4wL" id="bLA-8w-N43"/>
                         <outlet property="statusLabel" destination="gl2-R9-6N3" id="kPh-0s-Vb2"/>
                         <outlet property="timer" destination="QWD-BQ-6ZO" id="2Zg-Ar-z2d"/>
-                        <outlet property="warningCenter" destination="ALX-dE-Hn7" id="cnG-HA-dXJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -769,7 +763,6 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSCaution" width="32" height="32"/>
         <image name="NSStatusNone" width="16" height="16"/>
     </resources>
 </document>
