@@ -690,7 +690,7 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-BQ-6ZO">
                                 <rect key="frame" x="18" y="64" width="222" height="30"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="00:00:00" id="fti-eq-dJj">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="00:00" id="fti-eq-dJj">
                                     <font key="font" metaFont="system" size="26"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -744,7 +744,6 @@
                             <constraint firstItem="vZp-k4-6Br" firstAttribute="centerY" secondItem="Cli-HE-GK1" secondAttribute="centerY" id="eKP-Vo-VfH"/>
                             <constraint firstItem="gl2-R9-6N3" firstAttribute="leading" secondItem="AKA-v4-4wL" secondAttribute="trailing" constant="5" id="irY-g6-ilb"/>
                             <constraint firstItem="AKA-v4-4wL" firstAttribute="centerY" secondItem="gl2-R9-6N3" secondAttribute="centerY" id="kTl-FR-rYs"/>
-                            <constraint firstItem="6on-l9-b5y" firstAttribute="top" secondItem="QWD-BQ-6ZO" secondAttribute="bottom" constant="20" id="l3a-2H-zGJ"/>
                             <constraint firstItem="Cli-HE-GK1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="uqs-mX-cNk"/>
                         </constraints>
                     </view>

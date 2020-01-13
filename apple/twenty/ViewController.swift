@@ -76,18 +76,19 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func displayTimer() {
+        let initialValue = "20:00"
         if (activityStatus.activityTimer.isValid || activityStatus.breakTimer.isValid) {
             let formatter = DateComponentsFormatter()
             formatter.unitsStyle = .positional
-            formatter.allowedUnits = [.hour, .minute, .second]
+            formatter.allowedUnits = [.minute, .second]
             formatter.zeroFormattingBehavior = .pad
 
             let now = Date()
             let targetDate = activityStatus.status == Status.Active ? activityStatus.activityTimer.fireDate : activityStatus.breakTimer.fireDate
             let formattedTimeLeft = formatter.string(from: now, to: targetDate)
-            timer.stringValue = formattedTimeLeft ?? "00:00:00"
+            timer.stringValue = formattedTimeLeft ?? initialValue
         } else {
-            timer.stringValue = "00:00:00"
+            timer.stringValue = initialValue
         }
     }
     

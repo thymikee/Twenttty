@@ -60,7 +60,7 @@ class BreakNotification {
         case 6:
             return "Look at something far away for 20s"
         case 7:
-            return "Is it a plane? Is it a bird? It's something outside to look at"
+            return "Is it a plane? Is it a bird? Maybe, take a look"
         case 8:
             return "Relax, take it easy"
         case 9:
