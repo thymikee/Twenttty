@@ -685,11 +685,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="twenty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="222" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-BQ-6ZO">
-                                <rect key="frame" x="18" y="64" width="222" height="30"/>
+                                <rect key="frame" x="18" y="64" width="186" height="30"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="00:00" id="fti-eq-dJj">
                                     <font key="font" metaFont="system" size="26"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -709,7 +709,7 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6on-l9-b5y">
-                                <rect key="frame" x="20" y="41" width="218" height="5"/>
+                                <rect key="frame" x="20" y="41" width="182" height="5"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cli-HE-GK1">
                                 <rect key="frame" x="18" y="20" width="95" height="13"/>
@@ -720,7 +720,7 @@
                                 </textFieldCell>
                             </textField>
                             <button toolTip="Preferences" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vZp-k4-6Br">
-                                <rect key="frame" x="224" y="20" width="14" height="14"/>
+                                <rect key="frame" x="188" y="20" width="14" height="14"/>
                                 <buttonCell key="cell" type="bevel" alternateTitle="Preferences" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" inset="2" id="nGp-4R-bXk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -729,12 +729,19 @@
                                     <action selector="onPreferencesPress:" target="XfG-lQ-9wD" id="TnL-on-ikt"/>
                                 </connections>
                             </button>
+                            <imageView toolTip="The 20-20-20 rule: Take a 20 second break every 20 minutes by looking 20 feet (6m) away" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2xL-Ba-CZg">
+                                <rect key="frame" x="183" y="111" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" controlSize="small" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSTouchBarGetInfoTemplate" id="CcF-kS-I2w"/>
+                                <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vZp-k4-6Br" secondAttribute="trailing" constant="20" id="0fE-5m-eGO"/>
                             <constraint firstItem="QWD-BQ-6ZO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="APa-dM-Kz5"/>
                             <constraint firstAttribute="trailing" secondItem="QWD-BQ-6ZO" secondAttribute="trailing" constant="20" id="BZL-Ry-pla"/>
                             <constraint firstItem="QWD-BQ-6ZO" firstAttribute="top" secondItem="gl2-R9-6N3" secondAttribute="bottom" constant="20" id="C9o-4z-0fm"/>
+                            <constraint firstItem="2xL-Ba-CZg" firstAttribute="centerY" secondItem="gl2-R9-6N3" secondAttribute="centerY" id="Fqk-Ck-cfk"/>
                             <constraint firstAttribute="trailing" secondItem="6on-l9-b5y" secondAttribute="trailing" constant="20" id="FuC-iD-yam"/>
                             <constraint firstItem="6on-l9-b5y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="OeH-j5-tlg"/>
                             <constraint firstItem="AKA-v4-4wL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Wb7-tI-Pvy"/>
@@ -757,11 +764,12 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="316"/>
+            <point key="canvasLocation" x="-59" y="316"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSStatusNone" width="16" height="16"/>
+        <image name="NSTouchBarGetInfoTemplate" width="18" height="30"/>
     </resources>
 </document>
