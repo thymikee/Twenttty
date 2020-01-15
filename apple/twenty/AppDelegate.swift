@@ -12,13 +12,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     let activityStatus = ActivityStatus()
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    let popover = NSPopover()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let icon = NSImage(named: "12")
         icon?.isTemplate = true
         statusItem.button?.image = icon
         statusItem.button?.target = self
-        statusItem.button?.action = #selector(showSettings)
+        statusItem.button?.action = #selector(togglePopover)
 
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.updateStatusItemImage(icon)
@@ -54,19 +55,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         activityStatus.dispose()
     }
-
-    @objc func showSettings() {
+    
+    func getMainView() -> ViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
             fatalError("Unable to find ViewController")
         }
-
         vc.activityStatus = activityStatus
+        return vc
+    }
 
-        let popoverView = NSPopover()
-        popoverView.contentViewController = vc
-        popoverView.behavior = .transient
-        popoverView.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY )
+    @objc func togglePopover() {
+        if (popover.isShown) {
+            popover.close()
+        } else {
+            popover.contentViewController = getMainView()
+            popover.behavior = .transient
+            popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY )
+        }
     }
 }
 
