@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		204C9F0C23BFD05E00FD462F /* Autopilot Disengage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */; };
-		204C9F0E23BFD0C900FD462F /* Autopilot Engage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 204C9F0D23BFD0C900FD462F /* Autopilot Engage.wav */; };
+		20650A942479963B00619A03 /* Autopilot Engage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20650A922479963B00619A03 /* Autopilot Engage.wav */; };
+		20650A952479963B00619A03 /* Autopilot Disengage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20650A932479963B00619A03 /* Autopilot Disengage.wav */; };
 		2081ECDA23C927CB004AAC29 /* BreakNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081ECD923C927CB004AAC29 /* BreakNotification.swift */; };
 		20B795F623B411D60042B081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F523B411D60042B081 /* AppDelegate.swift */; };
 		20B795F823B411D60042B081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F723B411D60042B081 /* ViewController.swift */; };
@@ -19,8 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Autopilot Disengage.wav"; path = "../../../../../Downloads/Autopilot Disengage.wav"; sourceTree = "<group>"; };
-		204C9F0D23BFD0C900FD462F /* Autopilot Engage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Autopilot Engage.wav"; path = "../../../../../Downloads/Autopilot Engage.wav"; sourceTree = "<group>"; };
+		20650A922479963B00619A03 /* Autopilot Engage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Autopilot Engage.wav"; sourceTree = "<group>"; };
+		20650A932479963B00619A03 /* Autopilot Disengage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Autopilot Disengage.wav"; sourceTree = "<group>"; };
 		2081ECD923C927CB004AAC29 /* BreakNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakNotification.swift; sourceTree = "<group>"; };
 		20B795F223B411D60042B081 /* twenty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twenty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B795F523B411D60042B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20650A912479962A00619A03 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				20650A932479963B00619A03 /* Autopilot Disengage.wav */,
+				20650A922479963B00619A03 /* Autopilot Engage.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		20B795E923B411D60042B081 = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +74,7 @@
 		20B795F423B411D60042B081 /* twenty */ = {
 			isa = PBXGroup;
 			children = (
-				204C9F0B23BFD05D00FD462F /* Autopilot Disengage.wav */,
-				204C9F0D23BFD0C900FD462F /* Autopilot Engage.wav */,
+				20650A912479962A00619A03 /* Sounds */,
 				20B795F523B411D60042B081 /* AppDelegate.swift */,
 				20B795F723B411D60042B081 /* ViewController.swift */,
 				20B7963E23B964660042B081 /* ActivityStatus.swift */,
@@ -116,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Michał Pierzchała";
 				TargetAttributes = {
 					20B795F123B411D60042B081 = {
@@ -147,10 +155,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204C9F0E23BFD0C900FD462F /* Autopilot Engage.wav in Resources */,
+				20650A942479963B00619A03 /* Autopilot Engage.wav in Resources */,
 				20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */,
-				204C9F0C23BFD05E00FD462F /* Autopilot Disengage.wav in Resources */,
 				20B795FD23B411DA0042B081 /* Main.storyboard in Resources */,
+				20650A952479963B00619A03 /* Autopilot Disengage.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = twenty/twenty.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -361,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = twenty/twenty.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
