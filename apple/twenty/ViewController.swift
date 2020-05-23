@@ -15,6 +15,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var statusImage: NSImageView!
     @IBOutlet weak var preferences: NSButton!
     @IBOutlet weak var appVersionLabel: NSTextField!
+    @IBOutlet weak var isMutedButton: NSButton!
     var activityStatus: ActivityStatus! // injected from AppDelegate
     var interval: Timer = Timer()
 
@@ -24,6 +25,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         setupAppName()
         displayStatus()
         displayTimer()
+        displayMutedButton()
         
         interval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.displayStatus()
@@ -33,6 +35,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     override func viewDidDisappear() {
         interval.invalidate()
+    }
+    
+    @IBAction func onToggleMute(_ sender: Any) {
+        activityStatus.breakNotification.isMuted = !activityStatus.breakNotification.isMuted
+        displayMutedButton()
     }
     
     @IBAction func onPreferencesPress(_ sender: NSButton) {
@@ -67,6 +74,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     @objc func quitApp() {
         exit(0)
+    }
+    
+    func displayMutedButton() {
+        if (activityStatus.breakNotification.isMuted) {
+            isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputMuteTemplate")
+            isMutedButton.toolTip = "Unmute"
+        } else {
+            isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputVolumeHighTemplate")
+            isMutedButton.toolTip = "Mute"
+        }
     }
     
     func setupAppName() {

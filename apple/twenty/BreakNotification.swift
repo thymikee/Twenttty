@@ -12,6 +12,7 @@ import UserNotifications
 
 class BreakNotification {
     var isGranted: Bool = false
+    var isMuted: Bool = false
     
     func register() {
         let center = UNUserNotificationCenter.current()
@@ -22,6 +23,10 @@ class BreakNotification {
     }
     
     func schedule() {
+        if (isMuted) {
+            return
+        }
+        
         if (!isGranted) {
             NSSound(named: "Autopilot Engage.wav")?.play()
             return

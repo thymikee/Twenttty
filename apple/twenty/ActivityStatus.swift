@@ -79,6 +79,11 @@ class ActivityStatus {
         breakNotification.schedule()
         breakTimer = Timer.scheduledTimer(withTimeInterval: breakTime, repeats: false, block: { _ in
             self.status = Status.Inactive
+            
+            if (self.breakNotification.isMuted) {
+                return
+            }
+            
             NSSound(named: "Autopilot Disengage.wav")?.play()
         })
     }

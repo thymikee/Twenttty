@@ -45,6 +45,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusItem.button?.image = defaultIcon
             statusItem.button?.contentTintColor = nil
         }
+        
+        if (activityStatus.breakNotification.isMuted) {
+            statusItem.button?.contentTintColor = NSColor.systemYellow
+        }
     }
 
     func getImageForTimeLeft(_ timeLeft: TimeInterval, _ base: Double) -> String {
