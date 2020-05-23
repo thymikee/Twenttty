@@ -84,6 +84,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputVolumeHighTemplate")
             isMutedButton.toolTip = "Mute"
         }
+        activityStatus.onActivityChange()
     }
     
     func setupAppName() {

@@ -9,24 +9,25 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, ActivityStatusDelegate {
     let activityStatus = ActivityStatus()
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let popover = NSPopover()
+    let statusBarIcon = NSImage(named: "12")
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let icon = NSImage(named: "12")
-        icon?.isTemplate = true
-        statusItem.button?.image = icon
+        activityStatus.delegate = self
+        statusBarIcon?.isTemplate = true
+        statusItem.button?.image = statusBarIcon
         statusItem.button?.target = self
         statusItem.button?.action = #selector(togglePopover)
-
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            self.updateStatusItemImage(icon)
-        })
+    }
+    
+    func onActivityChange(_ sender: ActivityStatus) {
+        updateStatusItemImage()
     }
 
-    func updateStatusItemImage(_ defaultIcon: NSImage?) {
+    func updateStatusItemImage() {
         if (activityStatus.activityTimer.isValid) {
             let timeLeft = abs(Date().timeIntervalSince(activityStatus.activityTimer.fireDate))
             let iconName = getImageForTimeLeft(timeLeft, activityStatus.activityTime)
@@ -42,12 +43,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusItem.button?.image = icon
             statusItem.button?.contentTintColor = NSColor.red
         } else {
-            statusItem.button?.image = defaultIcon
+            statusItem.button?.image = statusBarIcon
             statusItem.button?.contentTintColor = nil
         }
         
         if (activityStatus.breakNotification.isMuted) {
-            statusItem.button?.contentTintColor = NSColor.systemYellow
+            statusItem.button?.contentTintColor = NSColor.darkGray
         }
     }
 
