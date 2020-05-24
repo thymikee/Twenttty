@@ -11,6 +11,7 @@
 		20650A952479963B00619A03 /* Autopilot Disengage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20650A932479963B00619A03 /* Autopilot Disengage.wav */; };
 		20650A972479BE6600619A03 /* ActivityStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */; };
 		20650A9B247A66FA00619A03 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9A247A66FA00619A03 /* AppVersion.swift */; };
+		20650A9D247AAF0E00619A03 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9C247AAF0E00619A03 /* StatusBar.swift */; };
 		2081ECDA23C927CB004AAC29 /* BreakNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081ECD923C927CB004AAC29 /* BreakNotification.swift */; };
 		20B795F623B411D60042B081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F523B411D60042B081 /* AppDelegate.swift */; };
 		20B795F823B411D60042B081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F723B411D60042B081 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		20650A932479963B00619A03 /* Autopilot Disengage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Autopilot Disengage.wav"; sourceTree = "<group>"; };
 		20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatusDelegate.swift; sourceTree = "<group>"; };
 		20650A9A247A66FA00619A03 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		20650A9C247AAF0E00619A03 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		2081ECD923C927CB004AAC29 /* BreakNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakNotification.swift; sourceTree = "<group>"; };
 		20B795F223B411D60042B081 /* twenty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twenty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B795F523B411D60042B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				20650A912479962A00619A03 /* Sounds */,
 				20B795F523B411D60042B081 /* AppDelegate.swift */,
+				20650A9C247AAF0E00619A03 /* StatusBar.swift */,
 				20650A9A247A66FA00619A03 /* AppVersion.swift */,
 				20B795F723B411D60042B081 /* ViewController.swift */,
 				20B7963E23B964660042B081 /* ActivityStatus.swift */,
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20650A9D247AAF0E00619A03 /* StatusBar.swift in Sources */,
 				2081ECDA23C927CB004AAC29 /* BreakNotification.swift in Sources */,
 				20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */,
 				20B795F823B411D60042B081 /* ViewController.swift in Sources */,
