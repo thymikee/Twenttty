@@ -41,14 +41,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ActivityStatusDelegate {
             let icon = NSImage(named: iconName)
             icon?.isTemplate = true
             statusItem.button?.image = icon
-            statusItem.button?.contentTintColor = NSColor.red
+            statusItem.button?.contentTintColor = NSColor.systemRed
         } else {
             statusItem.button?.image = statusBarIcon
             statusItem.button?.contentTintColor = nil
         }
         
         if (activityStatus.breakNotification.isMuted) {
-            statusItem.button?.contentTintColor = NSColor.darkGray
+            statusItem.button?.contentTintColor = NSColor.systemGray
         }
     }
 

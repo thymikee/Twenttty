@@ -22,7 +22,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppName()
+        setAppVersion()
         displayStatus()
         displayTimer()
         displayMutedButton()
@@ -87,14 +87,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         activityStatus.onActivityChange()
     }
     
-    func setupAppName() {
-        let name = Bundle.main.infoDictionary!["CFBundleName"] as! String
-        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        appVersionLabel.stringValue = name + " v" + version
+    func setAppVersion() {
+        appVersionLabel.stringValue = AppVersion().getVersion()
     }
     
     func displayTimer() {
-        let initialValue = "20:00"
+        let initialValue = (String(Int(floor(activityStatus.activityTime / 60)))).padding(toLength: 2, withPad: "0", startingAt: 0) + ":00"
         if (activityStatus.activityTimer.isValid || activityStatus.breakTimer.isValid) {
             let formatter = DateComponentsFormatter()
             formatter.unitsStyle = .positional
