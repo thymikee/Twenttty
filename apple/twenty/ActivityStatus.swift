@@ -85,17 +85,12 @@ class ActivityStatus {
     func startBreak() {
         invalidateTimers()
         status = Status.Break
-        breakNotification.schedule()
+        breakNotification.startBreak()
         breakTimer = Timer.scheduledTimer(withTimeInterval: breakTime, repeats: false, block: { _ in
             self.status = Status.Inactive
             self.onActivityChange()
             self.startActivityMonitoring()
-            
-            if (self.breakNotification.isMuted) {
-                return
-            }
-            
-            NSSound(named: "Autopilot Disengage.wav")?.play()
+            self.breakNotification.endBreak()
         })
         clockUITimer = Timer.scheduledTimer(withTimeInterval: breakTime / 12, repeats: true, block: { _ in
             self.onActivityChange()

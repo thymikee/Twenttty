@@ -13,6 +13,8 @@ import UserNotifications
 class BreakNotification {
     var isGranted: Bool = false
     var isMuted: Bool = false
+    let startBreakSoundName = "Autopilot Engage.wav"
+    let endBreakSoundName = "Autopilot Disengage.wav"
     
     func register() {
         let center = UNUserNotificationCenter.current()
@@ -22,29 +24,41 @@ class BreakNotification {
         }
     }
     
-    func schedule() {
+    deinit {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
+    func startBreak() {
+        let content = UNMutableNotificationContent()
+        content.title = "Break time!"
+        content.body = getRandomNotificationBody()
+        content.categoryIdentifier = "alarm"
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: startBreakSoundName))
+        
+        scheduleNotification(content, NSSound(named: startBreakSoundName))
+    }
+    
+    func endBreak() {
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: endBreakSoundName))
+        
+        scheduleNotification(content, NSSound(named: endBreakSoundName))
+    }
+    
+    func scheduleNotification(_ content: UNMutableNotificationContent, _ fallbackSound: NSSound?) {
         if (isMuted) {
             return
         }
         
         if (!isGranted) {
-            NSSound(named: "Autopilot Engage.wav")?.play()
+            fallbackSound?.play()
             return
         }
         
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
-
-        let content = UNMutableNotificationContent()
-        content.title = "Break time!"
-        content.body = getRandomNotificationBody()
-        content.categoryIdentifier = "alarm"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Autopilot Engage.wav"))
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
+        
+        UNUserNotificationCenter.current().add(request)
     }
     
     func getRandomNotificationBody() -> String {
