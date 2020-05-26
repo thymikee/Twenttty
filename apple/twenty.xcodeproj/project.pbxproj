@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20650A942479963B00619A03 /* Autopilot Engage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20650A922479963B00619A03 /* Autopilot Engage.wav */; };
-		20650A952479963B00619A03 /* Autopilot Disengage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20650A932479963B00619A03 /* Autopilot Disengage.wav */; };
+		20258A37247D997F00D541A0 /* StartBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20258A36247D997F00D541A0 /* StartBreak.wav */; };
+		20258A39247D99AC00D541A0 /* EndBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20258A38247D99AC00D541A0 /* EndBreak.wav */; };
 		20650A972479BE6600619A03 /* ActivityStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */; };
 		20650A9B247A66FA00619A03 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9A247A66FA00619A03 /* AppVersion.swift */; };
 		20650A9D247AAF0E00619A03 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9C247AAF0E00619A03 /* StatusBar.swift */; };
@@ -22,8 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20650A922479963B00619A03 /* Autopilot Engage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Autopilot Engage.wav"; sourceTree = "<group>"; };
-		20650A932479963B00619A03 /* Autopilot Disengage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Autopilot Disengage.wav"; sourceTree = "<group>"; };
+		20258A36247D997F00D541A0 /* StartBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = StartBreak.wav; sourceTree = "<group>"; };
+		20258A38247D99AC00D541A0 /* EndBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EndBreak.wav; sourceTree = "<group>"; };
 		20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatusDelegate.swift; sourceTree = "<group>"; };
 		20650A9A247A66FA00619A03 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		20650A9C247AAF0E00619A03 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
@@ -51,11 +51,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20650A912479962A00619A03 /* Sounds */ = {
+		20258A3A247D99B100D541A0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				20650A932479963B00619A03 /* Autopilot Disengage.wav */,
-				20650A922479963B00619A03 /* Autopilot Engage.wav */,
+				20258A36247D997F00D541A0 /* StartBreak.wav */,
+				20258A38247D99AC00D541A0 /* EndBreak.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -80,18 +80,18 @@
 		20B795F423B411D60042B081 /* twenty */ = {
 			isa = PBXGroup;
 			children = (
-				20650A912479962A00619A03 /* Sounds */,
-				20B795F523B411D60042B081 /* AppDelegate.swift */,
-				20650A9C247AAF0E00619A03 /* StatusBar.swift */,
-				20650A9A247A66FA00619A03 /* AppVersion.swift */,
-				20B795F723B411D60042B081 /* ViewController.swift */,
+				20B795FF23B411DA0042B081 /* twenty.entitlements */,
+				20B795FE23B411DA0042B081 /* Info.plist */,
 				20B7963E23B964660042B081 /* ActivityStatus.swift */,
 				20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */,
+				20B795F523B411D60042B081 /* AppDelegate.swift */,
+				20650A9A247A66FA00619A03 /* AppVersion.swift */,
 				2081ECD923C927CB004AAC29 /* BreakNotification.swift */,
+				20650A9C247AAF0E00619A03 /* StatusBar.swift */,
+				20B795F723B411D60042B081 /* ViewController.swift */,
 				20B795F923B411DA0042B081 /* Assets.xcassets */,
 				20B795FB23B411DA0042B081 /* Main.storyboard */,
-				20B795FE23B411DA0042B081 /* Info.plist */,
-				20B795FF23B411DA0042B081 /* twenty.entitlements */,
+				20258A3A247D99B100D541A0 /* Sounds */,
 			);
 			path = twenty;
 			sourceTree = "<group>";
@@ -164,10 +164,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20650A942479963B00619A03 /* Autopilot Engage.wav in Resources */,
+				20258A39247D99AC00D541A0 /* EndBreak.wav in Resources */,
+				20258A37247D997F00D541A0 /* StartBreak.wav in Resources */,
 				20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */,
 				20B795FD23B411DA0042B081 /* Main.storyboard in Resources */,
-				20650A952479963B00619A03 /* Autopilot Disengage.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

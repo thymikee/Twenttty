@@ -13,9 +13,9 @@ import UserNotifications
 class BreakNotification {
     var isGranted: Bool = false
     var isMuted: Bool = false
-    let startBreakSoundName = "Autopilot Engage.wav"
-    let endBreakSoundName = "Autopilot Disengage.wav"
-    
+    let startBreakSoundName = "StartBreak.wav"
+    let endBreakSoundName = "EndBreak.wav"
+
     func register() {
         let center = UNUserNotificationCenter.current()
 
@@ -23,44 +23,48 @@ class BreakNotification {
             self.isGranted = granted
         }
     }
-    
+
     deinit {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
     }
-    
+
     func startBreak() {
         let content = UNMutableNotificationContent()
         content.title = "Break time!"
         content.body = getRandomNotificationBody()
-        content.categoryIdentifier = "alarm"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: startBreakSoundName))
-        
-        scheduleNotification(content, NSSound(named: startBreakSoundName))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(startBreakSoundName))
+
+        scheduleNotification(content: content, fallbackSound: startBreakSoundName)
     }
-    
+
     func endBreak() {
         let content = UNMutableNotificationContent()
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: endBreakSoundName))
-        
-        scheduleNotification(content, NSSound(named: endBreakSoundName))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(endBreakSoundName))
+
+        scheduleNotification(content: content, fallbackSound: endBreakSoundName)
     }
-    
-    func scheduleNotification(_ content: UNMutableNotificationContent, _ fallbackSound: NSSound?) {
+
+    func scheduleNotification(content: UNMutableNotificationContent, fallbackSound: String) {
         if (isMuted) {
             return
         }
-        
+
         if (!isGranted) {
-            fallbackSound?.play()
+            NSSound(named: fallbackSound)?.play()
             return
         }
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+        let center = UNUserNotificationCenter.current()
+
+        center.add(request) { (error : Error?) in
+            if error != nil {
+                // no need to handle for now
+            }
+        }
     }
-    
+
     func getRandomNotificationBody() -> String {
         let random = Int.random(in: 0...10)
         switch random {
