@@ -30,9 +30,12 @@ class ActivityStatus {
     
     init() {
         systemEventsCount = getSystemEventsCount()
-        breakNotification.register()
         subscribeToLockScreen()
         startActivityMonitoring()
+    }
+    
+    deinit {
+        dispose()
     }
     
     func dispose() {

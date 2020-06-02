@@ -10,14 +10,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let activityStatus = ActivityStatus()
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        _ = StatusBar(activityStatus)
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        activityStatus.dispose()
+        _ = StatusBar()
     }
 }
 

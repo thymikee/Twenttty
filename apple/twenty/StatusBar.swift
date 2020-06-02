@@ -12,10 +12,9 @@ class StatusBar: ActivityStatusDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let statusBarIcon = NSImage(named: "12")
     let popover = NSPopover()
-    let activityStatus: ActivityStatus
+    let activityStatus = ActivityStatus()
     
-    init(_ astatus: ActivityStatus) {
-        activityStatus = astatus
+    init() {
         activityStatus.delegate = self
         initStatusBarIcon()
     }

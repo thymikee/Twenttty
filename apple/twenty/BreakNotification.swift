@@ -16,9 +16,8 @@ class BreakNotification {
     let startBreakSoundName = "StartBreak.wav"
     let endBreakSoundName = "EndBreak.wav"
 
-    func register() {
+    init() {
         let center = UNUserNotificationCenter.current()
-
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             self.isGranted = granted
         }
