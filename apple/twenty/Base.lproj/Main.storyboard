@@ -707,11 +707,11 @@
             <objects>
                 <viewController id="A2o-T1-8cx" sceneMemberID="viewController">
                     <view key="view" id="X2D-tt-SZb">
-                        <rect key="frame" x="0.0" y="0.0" width="284" height="221"/>
+                        <rect key="frame" x="0.0" y="0.0" width="284" height="240"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h4d-iZ-mcx">
-                                <rect key="frame" x="114" y="125" width="56" height="16"/>
+                                <rect key="frame" x="114" y="144" width="56" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Twenty" id="6up-By-YIr">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -727,7 +727,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ns5-Dc-BhZ">
-                                <rect key="frame" x="112" y="43" width="61" height="13"/>
+                                <rect key="frame" x="112" y="62" width="61" height="13"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0" id="z2C-eW-6ZQ">
                                     <font key="font" metaFont="system" size="10"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -735,7 +735,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dvB-iV-0co">
-                                <rect key="frame" x="57" y="68" width="171" height="45"/>
+                                <rect key="frame" x="57" y="87" width="171" height="45"/>
                                 <textFieldCell key="cell" selectable="YES" alignment="center" title="Take a 20 second break  every 20 minutes by looking  20 feet (6m) away" id="zEQ-D1-qPM">
                                     <font key="font" metaFont="label" size="12"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -743,25 +743,35 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ax0-SD-wBR">
-                                <rect key="frame" x="118" y="153" width="48" height="48"/>
+                                <rect key="frame" x="118" y="172" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="r9u-CX-Ztu"/>
                                     <constraint firstAttribute="height" constant="48" id="yba-iZ-Y0r"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="c7g-gB-HWB"/>
                             </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="amg-JS-gtU">
+                                <rect key="frame" x="19" y="41" width="247" height="13"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="App icon made by Freepik from www.flaticon.com" id="eEI-BV-p9o">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="h4d-iZ-mcx" firstAttribute="top" secondItem="ax0-SD-wBR" secondAttribute="bottom" constant="12" id="0jL-yB-W4v"/>
                             <constraint firstItem="Ns5-Dc-BhZ" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="24z-IR-cPJ"/>
                             <constraint firstItem="h4d-iZ-mcx" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="GmF-9E-4oP"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="top" secondItem="X2D-tt-SZb" secondAttribute="top" constant="20" id="J2m-Aj-TCf"/>
+                            <constraint firstItem="amg-JS-gtU" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="KRK-hG-qli"/>
                             <constraint firstItem="dvB-iV-0co" firstAttribute="top" secondItem="h4d-iZ-mcx" secondAttribute="bottom" constant="12" id="KY3-kt-A9e"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="top" secondItem="X2D-tt-SZb" secondAttribute="top" constant="20" id="RVJ-aG-Qy5"/>
                             <constraint firstItem="h4d-iZ-mcx" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="b5e-oa-lUb"/>
-                            <constraint firstItem="0e2-JM-dCu" firstAttribute="top" secondItem="Ns5-Dc-BhZ" secondAttribute="bottom" constant="10" id="dDw-e8-z4x"/>
+                            <constraint firstItem="0e2-JM-dCu" firstAttribute="top" secondItem="amg-JS-gtU" secondAttribute="bottom" constant="8" id="eRw-7y-Y1I"/>
                             <constraint firstItem="0e2-JM-dCu" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="hDc-l4-h7C"/>
                             <constraint firstItem="Ns5-Dc-BhZ" firstAttribute="top" secondItem="dvB-iV-0co" secondAttribute="bottom" constant="12" id="iQO-C7-33c"/>
+                            <constraint firstItem="amg-JS-gtU" firstAttribute="top" secondItem="Ns5-Dc-BhZ" secondAttribute="bottom" constant="8" id="keM-Og-Ioe"/>
                             <constraint firstItem="dvB-iV-0co" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="ogu-Qx-tUc"/>
                             <constraint firstAttribute="bottom" secondItem="0e2-JM-dCu" secondAttribute="bottom" constant="20" id="vgk-Cn-0l0"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="xj8-Pl-BBo"/>
@@ -770,7 +780,7 @@
                 </viewController>
                 <customObject id="4of-3v-Z3P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="200.5"/>
+            <point key="canvasLocation" x="619" y="218"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
