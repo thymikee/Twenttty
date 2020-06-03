@@ -31,14 +31,14 @@ class StatusBar: ActivityStatusDelegate {
     }
 
     func updateStatusItemImage() {
-        if (activityStatus.activityTimer.isValid) {
+        if (AppState.status == Status.Active) {
             let timeLeft = abs(Date().timeIntervalSince(activityStatus.activityTimer.fireDate))
             let iconName = getImageForTimeLeft(timeLeft, activityStatus.activityTime)
             let icon = NSImage(named: iconName)
             icon?.isTemplate = true
             statusItem.button?.image = icon
             statusItem.button?.contentTintColor = nil
-        } else if (activityStatus.breakTimer.isValid) {
+        } else if (AppState.status == Status.Break) {
             let timeLeft = abs(Date().timeIntervalSince(activityStatus.breakTimer.fireDate))
             let iconName = getImageForTimeLeft(timeLeft, activityStatus.breakTime)
             let icon = NSImage(named: iconName)
@@ -50,7 +50,7 @@ class StatusBar: ActivityStatusDelegate {
             statusItem.button?.contentTintColor = nil
         }
         
-        if (activityStatus.breakNotification.isMuted) {
+        if (AppState.isMuted) {
             statusItem.button?.contentTintColor = NSColor.systemGray
         }
     }

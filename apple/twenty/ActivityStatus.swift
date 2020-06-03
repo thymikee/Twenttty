@@ -24,7 +24,6 @@ class ActivityStatus {
     var activityTimer = Timer()
     var breakTimer = Timer()
     var clockUITimer = Timer()
-    var status: Status = Status.Inactive
     var breakNotification = BreakNotification()
     var delegate: ActivityStatusDelegate?
     
@@ -35,12 +34,6 @@ class ActivityStatus {
     }
     
     deinit {
-        dispose()
-    }
-    
-    func dispose() {
-        status = Status.Inactive
-        activityMonitorTimer.invalidate()
         invalidateTimers()
     }
     
@@ -48,26 +41,26 @@ class ActivityStatus {
         let dnc = DistributedNotificationCenter.default()
 
         dnc.addObserver(forName: .init("com.apple.screenIsLocked"), object: nil, queue: .main) { _ in
-            self.dispose()
+            AppState.setStatus(Status.Inactive)
+            self.invalidateTimers()
         }
         
         dnc.addObserver(forName: .init("com.apple.screenIsUnlocked"), object: nil, queue: .main) { _ in
-            self.startActivityMonitoring()
+            self.startInactivity()
         }
     }
     
     func startActivityMonitoring() {
+        self.systemEventsCount = self.getSystemEventsCount()
         activityMonitorTimer = Timer.scheduledTimer(withTimeInterval: activityCheckInterval, repeats: true, block: { _ in
-            if (self.systemEventsCount != self.getSystemEventsCount() && self.status == Status.Inactive) {
-                self.activityMonitorTimer.invalidate()
+            if (self.systemEventsCount != self.getSystemEventsCount()) {
                 self.startActivity()
             }
-            
-            self.systemEventsCount = self.getSystemEventsCount()
         })
     }
     
     func invalidateTimers() {
+        activityMonitorTimer.invalidate()
         activityTimer.invalidate()
         clockUITimer.invalidate()
         breakTimer.invalidate()
@@ -75,7 +68,7 @@ class ActivityStatus {
     
     func startActivity() {
         invalidateTimers()
-        status = Status.Active
+        AppState.setStatus(Status.Active)
         activityTimer = Timer.scheduledTimer(withTimeInterval: activityTime, repeats: false, block: { _ in
             self.startBreak()
         })
@@ -87,17 +80,21 @@ class ActivityStatus {
     
     func startBreak() {
         invalidateTimers()
-        status = Status.Break
+        AppState.setStatus(Status.Break)
         breakNotification.startBreak()
         breakTimer = Timer.scheduledTimer(withTimeInterval: breakTime, repeats: false, block: { _ in
-            self.status = Status.Inactive
-            self.onActivityChange()
-            self.startActivityMonitoring()
             self.breakNotification.endBreak()
+            self.startInactivity()
         })
         clockUITimer = Timer.scheduledTimer(withTimeInterval: breakTime / 12, repeats: true, block: { _ in
             self.onActivityChange()
         })
+        onActivityChange()
+    }
+    
+    func startInactivity() {
+        AppState.setStatus(Status.Inactive)
+        startActivityMonitoring()
         onActivityChange()
     }
     

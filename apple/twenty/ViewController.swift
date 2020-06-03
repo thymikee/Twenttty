@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import LaunchAtLogin
 
 class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var timer: NSTextField!
@@ -16,7 +15,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var preferences: NSButton!
     @IBOutlet weak var appVersionLabel: NSTextField!
     @IBOutlet weak var isMutedButton: NSButton!
-    var activityStatus: ActivityStatus! // injected from AppDelegate
+    var activityStatus: ActivityStatus! // injected
     var interval: Timer = Timer()
 
     override func viewDidLoad() {
@@ -37,8 +36,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         interval.invalidate()
     }
     
-    @IBAction func onToggleMute(_ sender: Any) {
-        activityStatus.breakNotification.isMuted = !activityStatus.breakNotification.isMuted
+    @IBAction func onToggleMute(_ sender: NSButton) {
+        AppState.setIsMuted(!AppState.isMuted)
         displayMutedButton()
     }
     
@@ -49,7 +48,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             action: #selector(toggleLaunchAtLogin),
             keyEquivalent: ""
         )
-        launchAtLoginItem.state = LaunchAtLogin.isEnabled ? NSControl.StateValue.on : NSControl.StateValue.off
+        launchAtLoginItem.state = AppState.launchAtLogin ? NSControl.StateValue.on : NSControl.StateValue.off
         launchAtLoginItem.target = self
 
         let quitItem = NSMenuItem(
@@ -69,7 +68,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
-        LaunchAtLogin.isEnabled = !(sender.state as NSNumber).boolValue
+        AppState.setLaunchAtLogin(!(sender.state as NSNumber).boolValue)
     }
     
     @objc func quitApp() {
@@ -77,7 +76,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func displayMutedButton() {
-        if (activityStatus.breakNotification.isMuted) {
+        if (AppState.isMuted) {
             isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputMuteTemplate")
             isMutedButton.toolTip = "Unmute"
         } else {
@@ -93,24 +92,24 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     func displayTimer() {
         let initialValue = (String(Int(floor(activityStatus.activityTime / 60)))).padding(toLength: 2, withPad: "0", startingAt: 0) + ":00"
-        if (activityStatus.activityTimer.isValid || activityStatus.breakTimer.isValid) {
-            let formatter = DateComponentsFormatter()
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [.minute, .second]
-            formatter.zeroFormattingBehavior = .pad
+        let now = Date()
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.minute, .second]
+        formatter.zeroFormattingBehavior = .pad
 
-            let now = Date()
-            let targetDate = activityStatus.status == Status.Active ? activityStatus.activityTimer.fireDate : activityStatus.breakTimer.fireDate
-            let formattedTimeLeft = formatter.string(from: now, to: targetDate)
-            timer.stringValue = formattedTimeLeft ?? initialValue
+        if (AppState.status == Status.Active) {
+            timer.stringValue = formatter.string(from: now, to: activityStatus.activityTimer.fireDate) ?? initialValue
+        } else if (AppState.status == Status.Break) {
+            timer.stringValue = formatter.string(from: now, to: activityStatus.breakTimer.fireDate) ?? initialValue
         } else {
             timer.stringValue = initialValue
         }
     }
     
     func displayStatus() {
-        statusLabel.stringValue = activityStatus.status.rawValue
-        statusImage.image = mapStatusToImage(activityStatus.status)
+        statusLabel.stringValue = AppState.status.rawValue
+        statusImage.image = mapStatusToImage(AppState.status)
     }
     
     func mapStatusToImage(_ status: Status) -> NSImage {

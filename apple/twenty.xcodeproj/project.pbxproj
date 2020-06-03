@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20258A37247D997F00D541A0 /* StartBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20258A36247D997F00D541A0 /* StartBreak.wav */; };
 		20258A39247D99AC00D541A0 /* EndBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20258A38247D99AC00D541A0 /* EndBreak.wav */; };
+		20534E2524883CE700F5002A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20534E2424883CE700F5002A /* AppState.swift */; };
 		20650A972479BE6600619A03 /* ActivityStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */; };
 		20650A9B247A66FA00619A03 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9A247A66FA00619A03 /* AppVersion.swift */; };
 		20650A9D247AAF0E00619A03 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9C247AAF0E00619A03 /* StatusBar.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		20258A36247D997F00D541A0 /* StartBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = StartBreak.wav; sourceTree = "<group>"; };
 		20258A38247D99AC00D541A0 /* EndBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EndBreak.wav; sourceTree = "<group>"; };
+		20534E2424883CE700F5002A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatusDelegate.swift; sourceTree = "<group>"; };
 		20650A9A247A66FA00619A03 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		20650A9C247AAF0E00619A03 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */,
 				20B795F523B411D60042B081 /* AppDelegate.swift */,
 				20650A9A247A66FA00619A03 /* AppVersion.swift */,
+				20534E2424883CE700F5002A /* AppState.swift */,
 				2081ECD923C927CB004AAC29 /* BreakNotification.swift */,
 				20650A9C247AAF0E00619A03 /* StatusBar.swift */,
 				20B795F723B411D60042B081 /* ViewController.swift */,
@@ -219,6 +222,7 @@
 				20650A9D247AAF0E00619A03 /* StatusBar.swift in Sources */,
 				2081ECDA23C927CB004AAC29 /* BreakNotification.swift in Sources */,
 				20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */,
+				20534E2524883CE700F5002A /* AppState.swift in Sources */,
 				20B795F823B411D60042B081 /* ViewController.swift in Sources */,
 				20B795F623B411D60042B081 /* AppDelegate.swift in Sources */,
 				20650A972479BE6600619A03 /* ActivityStatusDelegate.swift in Sources */,

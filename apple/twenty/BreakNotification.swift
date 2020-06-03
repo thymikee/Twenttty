@@ -12,7 +12,6 @@ import UserNotifications
 
 class BreakNotification {
     var isGranted: Bool = false
-    var isMuted: Bool = false
     let startBreakSoundName = "StartBreak.wav"
     let endBreakSoundName = "EndBreak.wav"
 
@@ -45,7 +44,7 @@ class BreakNotification {
     }
 
     func scheduleNotification(content: UNMutableNotificationContent, fallbackSound: String) {
-        if (isMuted) {
+        if (AppState.isMuted) {
             return
         }
 
