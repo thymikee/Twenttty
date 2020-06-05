@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  twenty
+//  Twenttty
 //
 //  Created by Michał Pierzchała on 25/12/2019.
 //  Copyright © 2019 Michał Pierzchała. All rights reserved.
@@ -20,27 +20,27 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setAppVersion()
         displayStatus()
         displayTimer()
         displayMutedButton()
-        
+
         interval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.displayStatus()
             self.displayTimer()
         })
     }
-    
+
     override func viewDidDisappear() {
         interval.invalidate()
     }
-    
+
     @IBAction func onToggleMute(_ sender: NSButton) {
         AppState.setIsMuted(!AppState.isMuted)
         displayMutedButton()
     }
-    
+
     @IBAction func onPreferencesPress(_ sender: NSButton) {
         let menu = NSMenu()
         let launchAtLoginItem = NSMenuItem(
@@ -66,15 +66,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             in: sender
         )
     }
-    
+
     @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
         AppState.setLaunchAtLogin(!(sender.state as NSNumber).boolValue)
     }
-    
+
     @objc func quitApp() {
         exit(0)
     }
-    
+
     func displayMutedButton() {
         if (AppState.isMuted) {
             isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputMuteTemplate")
@@ -85,11 +85,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
         activityStatus.onActivityChange()
     }
-    
+
     func setAppVersion() {
         appVersionLabel.stringValue = AppVersion().getVersion()
     }
-    
+
     func displayTimer() {
         let initialValue = (String(Int(floor(activityStatus.activityTime / 60)))).padding(toLength: 2, withPad: "0", startingAt: 0) + ":00"
         let now = Date()
@@ -106,12 +106,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             timer.stringValue = initialValue
         }
     }
-    
+
     func displayStatus() {
         statusLabel.stringValue = AppState.status.rawValue
         statusImage.image = mapStatusToImage(AppState.status)
     }
-    
+
     func mapStatusToImage(_ status: Status) -> NSImage {
         switch status {
         case Status.Active:

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20B795F123B411D60042B081"
-               BuildableName = "twenty.app"
-               BlueprintName = "twenty"
-               ReferencedContainer = "container:twenty.xcodeproj">
+               BuildableName = "Twenttty.app"
+               BlueprintName = "Twenttty"
+               ReferencedContainer = "container:Twenttty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "20B7960323B411DB0042B081"
                BuildableName = "twentyTests.xctest"
                BlueprintName = "twentyTests"
-               ReferencedContainer = "container:twenty.xcodeproj">
+               ReferencedContainer = "container:Twenttty.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "20B7960E23B411DB0042B081"
                BuildableName = "twentyUITests.xctest"
                BlueprintName = "twentyUITests"
-               ReferencedContainer = "container:twenty.xcodeproj">
+               ReferencedContainer = "container:Twenttty.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20B795F123B411D60042B081"
-            BuildableName = "twenty.app"
-            BlueprintName = "twenty"
-            ReferencedContainer = "container:twenty.xcodeproj">
+            BuildableName = "Twenttty.app"
+            BlueprintName = "Twenttty"
+            ReferencedContainer = "container:Twenttty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20B795F123B411D60042B081"
-            BuildableName = "twenty.app"
-            BlueprintName = "twenty"
-            ReferencedContainer = "container:twenty.xcodeproj">
+            BuildableName = "Twenttty.app"
+            BlueprintName = "Twenttty"
+            ReferencedContainer = "container:Twenttty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -30,13 +30,13 @@
 		20650A9A247A66FA00619A03 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		20650A9C247AAF0E00619A03 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		2081ECD923C927CB004AAC29 /* BreakNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakNotification.swift; sourceTree = "<group>"; };
-		20B795F223B411D60042B081 /* twenty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twenty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B795F223B411D60042B081 /* Twenttty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twenttty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B795F523B411D60042B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B795F723B411D60042B081 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		20B795F923B411DA0042B081 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B795FC23B411DA0042B081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B795FE23B411DA0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20B795FF23B411DA0042B081 /* twenty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = twenty.entitlements; sourceTree = "<group>"; };
+		20B795FF23B411DA0042B081 /* Twenttty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twenttty.entitlements; sourceTree = "<group>"; };
 		20B7963A23B911730042B081 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		20B7963E23B964660042B081 /* ActivityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +65,7 @@
 		20B795E923B411D60042B081 = {
 			isa = PBXGroup;
 			children = (
-				20B795F423B411D60042B081 /* twenty */,
+				20B795F423B411D60042B081 /* Twenttty */,
 				20B795F323B411D60042B081 /* Products */,
 				20B7963123B908210042B081 /* Frameworks */,
 			);
@@ -74,15 +74,15 @@
 		20B795F323B411D60042B081 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20B795F223B411D60042B081 /* twenty.app */,
+				20B795F223B411D60042B081 /* Twenttty.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		20B795F423B411D60042B081 /* twenty */ = {
+		20B795F423B411D60042B081 /* Twenttty */ = {
 			isa = PBXGroup;
 			children = (
-				20B795FF23B411DA0042B081 /* twenty.entitlements */,
+				20B795FF23B411DA0042B081 /* Twenttty.entitlements */,
 				20B795FE23B411DA0042B081 /* Info.plist */,
 				20B7963E23B964660042B081 /* ActivityStatus.swift */,
 				20650A962479BE6600619A03 /* ActivityStatusDelegate.swift */,
@@ -96,7 +96,7 @@
 				20B795FB23B411DA0042B081 /* Main.storyboard */,
 				20258A3A247D99B100D541A0 /* Sounds */,
 			);
-			path = twenty;
+			path = Twenttty;
 			sourceTree = "<group>";
 		};
 		20B7963123B908210042B081 /* Frameworks */ = {
@@ -110,9 +110,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20B795F123B411D60042B081 /* twenty */ = {
+		20B795F123B411D60042B081 /* Twenttty */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20B7961823B411DB0042B081 /* Build configuration list for PBXNativeTarget "twenty" */;
+			buildConfigurationList = 20B7961823B411DB0042B081 /* Build configuration list for PBXNativeTarget "Twenttty" */;
 			buildPhases = (
 				20B795EE23B411D60042B081 /* Sources */,
 				20B795EF23B411D60042B081 /* Frameworks */,
@@ -124,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = twenty;
-			productName = twenty;
-			productReference = 20B795F223B411D60042B081 /* twenty.app */;
+			name = Twenttty;
+			productName = Twenttty;
+			productReference = 20B795F223B411D60042B081 /* Twenttty.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 20B795ED23B411D60042B081 /* Build configuration list for PBXProject "twenty" */;
+			buildConfigurationList = 20B795ED23B411D60042B081 /* Build configuration list for PBXProject "Twenttty" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20B795F123B411D60042B081 /* twenty */,
+				20B795F123B411D60042B081 /* Twenttty */,
 			);
 		};
 /* End PBXProject section */
@@ -361,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = twenty/twenty.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Twenttty/Twenttty.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -369,13 +369,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = twenty/Info.plist;
+				INFOPLIST_FILE = Twenttty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = thymikee.twenty;
+				PRODUCT_BUNDLE_IDENTIFIER = thymikee.Twenttty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -385,7 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = twenty/twenty.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Twenttty/Twenttty.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -393,13 +393,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = twenty/Info.plist;
+				INFOPLIST_FILE = Twenttty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = thymikee.twenty;
+				PRODUCT_BUNDLE_IDENTIFIER = thymikee.Twenttty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -408,7 +408,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20B795ED23B411D60042B081 /* Build configuration list for PBXProject "twenty" */ = {
+		20B795ED23B411D60042B081 /* Build configuration list for PBXProject "Twenttty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20B7961623B411DB0042B081 /* Debug */,
@@ -417,7 +417,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20B7961823B411DB0042B081 /* Build configuration list for PBXNativeTarget "twenty" */ = {
+		20B7961823B411DB0042B081 /* Build configuration list for PBXNativeTarget "Twenttty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20B7961923B411DB0042B081 /* Debug */,

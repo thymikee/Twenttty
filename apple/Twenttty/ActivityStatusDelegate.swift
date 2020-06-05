@@ -1,6 +1,6 @@
 //
 //  ActivityStatusDelegate.swift
-//  twenty
+//  Twenttty
 //
 //  Created by Michał Pierzchała on 23/05/2020.
 //  Copyright © 2020 Michał Pierzchała. All rights reserved.

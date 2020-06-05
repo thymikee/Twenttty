@@ -1,6 +1,6 @@
 //
 //  StatusBar.swift
-//  twenty
+//  Twenttty
 //
 //  Created by Michał Pierzchała on 24/05/2020.
 //  Copyright © 2020 Michał Pierzchała. All rights reserved.
@@ -13,7 +13,7 @@ class StatusBar: ActivityStatusDelegate {
     let statusBarIcon = NSImage(named: "12")
     let popover = NSPopover()
     let activityStatus = ActivityStatus()
-    
+
     init() {
         activityStatus.delegate = self
         initStatusBarIcon()
@@ -25,7 +25,7 @@ class StatusBar: ActivityStatusDelegate {
         statusItem.button?.target = self
         statusItem.button?.action = #selector(togglePopover)
     }
-    
+
     func onActivityChange(_ sender: ActivityStatus) {
         updateStatusItemImage()
     }
@@ -49,7 +49,7 @@ class StatusBar: ActivityStatusDelegate {
             statusItem.button?.image = statusBarIcon
             statusItem.button?.contentTintColor = nil
         }
-        
+
         if (AppState.isMuted) {
             statusItem.button?.contentTintColor = NSColor.systemGray
         }
@@ -68,7 +68,7 @@ class StatusBar: ActivityStatusDelegate {
         vc.activityStatus = activityStatus
         return vc
     }
-    
+
     @objc func togglePopover() {
         if (popover.isShown) {
             popover.close()

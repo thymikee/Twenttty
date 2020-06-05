@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  twenty
+//  Twenttty
 //
 //  Created by Michał Pierzchała on 25/12/2019.
 //  Copyright © 2019 Michał Pierzchała. All rights reserved.

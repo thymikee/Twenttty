@@ -1,6 +1,6 @@
 //
 //  ActivityStatus.swift
-//  twenty
+//  Twenttty
 //
 //  Created by Michał Pierzchała on 29/12/2019.
 //  Copyright © 2019 Michał Pierzchała. All rights reserved.
@@ -26,17 +26,17 @@ class ActivityStatus {
     var clockUITimer = Timer()
     var breakNotification = BreakNotification()
     var delegate: ActivityStatusDelegate?
-    
+
     init() {
         systemEventsCount = getSystemEventsCount()
         subscribeToLockScreen()
         startActivityMonitoring()
     }
-    
+
     deinit {
         invalidateTimers()
     }
-    
+
     func subscribeToLockScreen() {
         let dnc = DistributedNotificationCenter.default()
 
@@ -44,12 +44,12 @@ class ActivityStatus {
             AppState.setStatus(Status.Inactive)
             self.invalidateTimers()
         }
-        
+
         dnc.addObserver(forName: .init("com.apple.screenIsUnlocked"), object: nil, queue: .main) { _ in
             self.startInactivity()
         }
     }
-    
+
     func startActivityMonitoring() {
         self.systemEventsCount = self.getSystemEventsCount()
         activityMonitorTimer = Timer.scheduledTimer(withTimeInterval: activityCheckInterval, repeats: true, block: { _ in
@@ -58,14 +58,14 @@ class ActivityStatus {
             }
         })
     }
-    
+
     func invalidateTimers() {
         activityMonitorTimer.invalidate()
         activityTimer.invalidate()
         clockUITimer.invalidate()
         breakTimer.invalidate()
     }
-    
+
     func startActivity() {
         invalidateTimers()
         AppState.setStatus(Status.Active)
@@ -77,7 +77,7 @@ class ActivityStatus {
         })
         onActivityChange()
     }
-    
+
     func startBreak() {
         invalidateTimers()
         AppState.setStatus(Status.Break)
@@ -91,13 +91,13 @@ class ActivityStatus {
         })
         onActivityChange()
     }
-    
+
     func startInactivity() {
         AppState.setStatus(Status.Inactive)
         startActivityMonitoring()
         onActivityChange()
     }
-    
+
     func onActivityChange() {
         delegate?.onActivityChange(self)
     }
