@@ -87,7 +87,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     func setAppVersion() {
-        appVersionLabel.stringValue = AppVersion().getVersion()
+        appVersionLabel.stringValue = AppVersion.getAppName() + " v" + AppVersion.getVersion()
     }
 
     func displayTimer() {

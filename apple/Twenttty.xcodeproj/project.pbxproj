@@ -14,6 +14,7 @@
 		20650A9B247A66FA00619A03 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9A247A66FA00619A03 /* AppVersion.swift */; };
 		20650A9D247AAF0E00619A03 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20650A9C247AAF0E00619A03 /* StatusBar.swift */; };
 		2081ECDA23C927CB004AAC29 /* BreakNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081ECD923C927CB004AAC29 /* BreakNotification.swift */; };
+		2083E603249D632700FC4DB4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083E602249D632700FC4DB4 /* AboutViewController.swift */; };
 		20B795F623B411D60042B081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F523B411D60042B081 /* AppDelegate.swift */; };
 		20B795F823B411D60042B081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F723B411D60042B081 /* ViewController.swift */; };
 		20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B795F923B411DA0042B081 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		20650A9A247A66FA00619A03 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		20650A9C247AAF0E00619A03 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		2081ECD923C927CB004AAC29 /* BreakNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakNotification.swift; sourceTree = "<group>"; };
+		2083E602249D632700FC4DB4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		20B795F223B411D60042B081 /* Twenttty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twenttty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B795F523B411D60042B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B795F723B411D60042B081 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -92,6 +94,7 @@
 				2081ECD923C927CB004AAC29 /* BreakNotification.swift */,
 				20650A9C247AAF0E00619A03 /* StatusBar.swift */,
 				20B795F723B411D60042B081 /* ViewController.swift */,
+				2083E602249D632700FC4DB4 /* AboutViewController.swift */,
 				20B795F923B411DA0042B081 /* Assets.xcassets */,
 				20B795FB23B411DA0042B081 /* Main.storyboard */,
 				20258A3A247D99B100D541A0 /* Sounds */,
@@ -223,6 +226,7 @@
 				2081ECDA23C927CB004AAC29 /* BreakNotification.swift in Sources */,
 				20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */,
 				20534E2524883CE700F5002A /* AppState.swift in Sources */,
+				2083E603249D632700FC4DB4 /* AboutViewController.swift in Sources */,
 				20B795F823B411D60042B081 /* ViewController.swift in Sources */,
 				20B795F623B411D60042B081 /* AppDelegate.swift in Sources */,
 				20650A972479BE6600619A03 /* ActivityStatusDelegate.swift in Sources */,

@@ -9,9 +9,11 @@
 import Foundation
 
 class AppVersion {
-    func getVersion() -> String {
-        let name = Bundle.main.infoDictionary!["CFBundleName"] as! String
-        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        return name + " v" + version
+    static func getVersion() -> String {
+        return Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    }
+    
+    static func getAppName() -> String {
+        return Bundle.main.infoDictionary!["CFBundleName"] as! String
     }
 }
