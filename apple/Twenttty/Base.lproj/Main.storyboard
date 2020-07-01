@@ -854,7 +854,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="eYW-f1-drY" kind="show" id="NMq-RK-Bra"/>
+                                    <segue destination="eYW-f1-drY" kind="modal" id="aVb-iI-VpR"/>
                                 </connections>
                             </button>
                         </subviews>
