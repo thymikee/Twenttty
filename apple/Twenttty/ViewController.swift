@@ -44,7 +44,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func onPreferencesPress(_ sender: NSButton) {
         let menu = NSMenu()
         let launchAtLoginItem = NSMenuItem(
-            title: "Launch at Login",
+            title: NSLocalizedString("menu_launch_login", comment: ""),
             action: #selector(toggleLaunchAtLogin),
             keyEquivalent: ""
         )
@@ -52,7 +52,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         launchAtLoginItem.target = self
 
         let quitItem = NSMenuItem(
-            title: "Quit",
+            title: NSLocalizedString("menu_quit", comment: ""),
             action: #selector(quitApp),
             keyEquivalent: "q"
         )
@@ -78,10 +78,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     func displayMutedButton() {
         if (AppState.isMuted) {
             isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputMuteTemplate")
-            isMutedButton.toolTip = "Unmute"
+            isMutedButton.toolTip = NSLocalizedString("tooltip_unmute", comment: "")
         } else {
             isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputVolumeHighTemplate")
-            isMutedButton.toolTip = "Mute"
+            isMutedButton.toolTip = NSLocalizedString("tooltip_mute", comment: "")
         }
         activityStatus.onActivityChange()
     }
@@ -108,18 +108,19 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     func displayStatus() {
-        statusLabel.stringValue = AppState.status.rawValue
-        statusImage.image = mapStatusToImage(AppState.status)
+        let (image, label) = mapStatusToLabelData(AppState.status)
+        statusLabel.stringValue = label
+        statusImage.image = image
     }
 
-    func mapStatusToImage(_ status: Status) -> NSImage {
+    func mapStatusToLabelData(_ status: Status) -> (NSImage, String) {
         switch status {
         case Status.Active:
-            return NSImage(named: "NSStatusAvailable")!
+            return (NSImage(named: "NSStatusAvailable")!, NSLocalizedString("status_active", comment: ""))
         case Status.Break:
-            return NSImage(named: "NSStatusUnavailable")!
+            return (NSImage(named: "NSStatusUnavailable")!, NSLocalizedString("status_break", comment: ""))
         default:
-            return NSImage(named: "NSStatusNone")!
+            return (NSImage(named: "NSStatusNone")!, NSLocalizedString("status_inactive", comment: ""))
         }
     }
 }

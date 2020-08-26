@@ -19,7 +19,7 @@ class AboutViewController: NSViewController {
     }
     
     func setAppVersion() {
-        appVersionLabel.stringValue = "Version " + AppVersion.getVersion()
+        appVersionLabel.stringValue = NSLocalizedString("version", comment: "") + " " + AppVersion.getVersion()
     }
     
     func setAppName() {

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Twenttty" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
@@ -675,9 +678,6 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Twenttty" customModuleProvider="target"/>
-                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
@@ -706,8 +706,8 @@
         <scene sceneID="UVK-AU-IgS">
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" id="A2o-T1-8cx" customClass="AboutViewController" customModule="Twenttty" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="X2D-tt-SZb">
-                        <rect key="frame" x="0.0" y="0.0" width="284" height="240"/>
+                    <view key="view" misplaced="YES" id="X2D-tt-SZb">
+                        <rect key="frame" x="0.0" y="0.0" width="284" height="234"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h4d-iZ-mcx">
@@ -736,8 +736,8 @@
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dvB-iV-0co">
                                 <rect key="frame" x="57" y="87" width="171" height="45"/>
-                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Take a 20 second break  every 20 minutes by looking  20 feet (6m) away" id="zEQ-D1-qPM">
-                                    <font key="font" metaFont="label" size="12"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Take a 20 second break  every 20 minutes by looking  20 feet (6m) away." id="zEQ-D1-qPM">
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -751,7 +751,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="c7g-gB-HWB"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="amg-JS-gtU">
-                                <rect key="frame" x="19" y="41" width="247" height="13"/>
+                                <rect key="frame" x="18" y="41" width="248" height="13"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="App icon made by Freepik from www.flaticon.com" id="eEI-BV-p9o">
                                     <font key="font" metaFont="system" size="10"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -773,6 +773,7 @@
                             <constraint firstItem="Ns5-Dc-BhZ" firstAttribute="top" secondItem="dvB-iV-0co" secondAttribute="bottom" constant="12" id="iQO-C7-33c"/>
                             <constraint firstItem="amg-JS-gtU" firstAttribute="top" secondItem="Ns5-Dc-BhZ" secondAttribute="bottom" constant="8" id="keM-Og-Ioe"/>
                             <constraint firstItem="dvB-iV-0co" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="ogu-Qx-tUc"/>
+                            <constraint firstAttribute="trailing" secondItem="amg-JS-gtU" secondAttribute="trailing" constant="20" id="sQz-Ol-EIF"/>
                             <constraint firstAttribute="bottom" secondItem="0e2-JM-dCu" secondAttribute="bottom" constant="20" id="vgk-Cn-0l0"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="xj8-Pl-BBo"/>
                         </constraints>
