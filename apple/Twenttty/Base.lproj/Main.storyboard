@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -700,12 +700,12 @@
                 </windowController>
                 <customObject id="JaR-7M-qvS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.5" y="173"/>
+            <point key="canvasLocation" x="346" y="148"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="UVK-AU-IgS">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="A2o-T1-8cx" customClass="AboutViewController" customModule="Twenttty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" showSeguePresentationStyle="single" id="A2o-T1-8cx" customClass="AboutViewController" customModule="Twenttty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="X2D-tt-SZb">
                         <rect key="frame" x="0.0" y="0.0" width="284" height="234"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -737,7 +737,7 @@
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dvB-iV-0co">
                                 <rect key="frame" x="57" y="87" width="171" height="45"/>
                                 <textFieldCell key="cell" selectable="YES" alignment="center" title="Take a 20 second break  every 20 minutes by looking  20 feet (6m) away." id="zEQ-D1-qPM">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="label" size="12"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -785,12 +785,12 @@
                 </viewController>
                 <customObject id="4of-3v-Z3P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="218"/>
+            <point key="canvasLocation" x="121" y="444"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Twenttty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="Twenttty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="222" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -855,7 +855,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="eYW-f1-drY" kind="modal" id="aVb-iI-VpR"/>
+                                    <segue destination="eYW-f1-drY" kind="modal" id="wHx-J0-hle"/>
                                 </connections>
                             </button>
                         </subviews>

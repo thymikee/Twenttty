@@ -20,6 +20,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // "About" window is opened as a modal so that it gets to the front.
+        // We want to stop the modal in case a user opens popover while modal is still opened,
+        // otherwise the UI of ViewController will halt.
+        // TODO: think about better approach, this is clearly a hack :|
+        NSApp.stopModal()
 
         setAppVersion()
         displayStatus()
@@ -42,7 +48,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     @IBAction func onPreferencesPress(_ sender: NSButton) {
-        let menu = NSMenu()
+        let preferencesMenu = NSMenu()
         let launchAtLoginItem = NSMenuItem(
             title: NSLocalizedString("menu_launch_login", comment: ""),
             action: #selector(toggleLaunchAtLogin),
@@ -58,9 +64,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         )
         quitItem.target = self
 
-        menu.addItem(launchAtLoginItem)
-        menu.addItem(quitItem)
-        menu.popUp(
+        preferencesMenu.addItem(launchAtLoginItem)
+        preferencesMenu.addItem(quitItem)
+        preferencesMenu.popUp(
             positioning: nil,
             at: NSPoint(x: 0, y: sender.frame.height),
             in: sender
