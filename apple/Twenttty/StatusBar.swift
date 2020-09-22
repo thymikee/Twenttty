@@ -8,13 +8,29 @@
 
 import Cocoa
 
-class StatusBar: ActivityStatusDelegate {
+class StatusBar: NSObject, ActivityStatusDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let statusBarIcon = NSImage(named: "12")
     let popover = NSPopover()
     let activityStatus = ActivityStatus()
+    var mainMenu: NSMenu?
+    var firstMenuItem: NSMenuItem?
+    var mainView: ViewController?
 
-    init() {
+    init(_ menu: NSMenu?, _ firstMenuItem: NSMenuItem?) {
+        super.init()
+        
+        if let menu = menu {
+            mainMenu = menu
+            statusItem.menu = menu
+            menu.delegate = self
+        }
+        
+        if let item = firstMenuItem {
+            mainView = getView()
+            item.view = mainView?.view
+        }
+
         activityStatus.delegate = self
         initStatusBarIcon()
     }
@@ -23,7 +39,6 @@ class StatusBar: ActivityStatusDelegate {
         statusBarIcon?.isTemplate = true
         statusItem.button?.image = statusBarIcon
         statusItem.button?.target = self
-        statusItem.button?.action = #selector(togglePopover)
     }
 
     func onActivityChange(_ sender: ActivityStatus) {
@@ -60,7 +75,7 @@ class StatusBar: ActivityStatusDelegate {
         return String(Int(floor((1 - timePercent) * 12)))
     }
 
-    func getMainView() -> ViewController {
+    func getView() -> ViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
             fatalError("Unable to find ViewController")
@@ -68,14 +83,14 @@ class StatusBar: ActivityStatusDelegate {
         vc.activityStatus = activityStatus
         return vc
     }
+}
 
-    @objc func togglePopover() {
-        if (popover.isShown) {
-            popover.close()
-        } else {
-            popover.contentViewController = getMainView()
-            popover.behavior = .transient
-            popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY )
-        }
+extension StatusBar: NSMenuDelegate {
+    func menuWillOpen(_ menu: NSMenu) {
+        mainView?.setup()
+    }
+    
+    func menuDidClose(_ menu: NSMenu) {
+        mainView?.teardown()
     }
 }

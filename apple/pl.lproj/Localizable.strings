@@ -12,9 +12,9 @@
 "notification_title" = "Czas na przerwę!";
 "menu_launch_login" = "Uruchom przy logowaniu";
 "menu_quit" = "Zakończ";
-"status_active" = "Aktywny";
-"status_break" = "Przerwa";
-"status_inactive" = "Nieaktywny";
+"status_active" = "następna przerwa za:";
+"status_break" = "koniec przerwy za:";
+"status_inactive" = "analizuję...";
 "tooltip_unmute" = "Włącz dźwięk";
 "tooltip_mute" = "Wycisz";
 "version" = "Wersja";

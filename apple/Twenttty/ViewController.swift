@@ -13,87 +13,44 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var statusImage: NSImageView!
     @IBOutlet weak var preferences: NSButton!
-    @IBOutlet weak var appVersionLabel: NSTextField!
+    @IBOutlet weak var appNameLabel: NSTextField!
     @IBOutlet weak var isMutedButton: NSButton!
+    @IBOutlet weak var progressBar: NSProgressIndicator!
     var activityStatus: ActivityStatus! // injected
     var interval: Timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+
+    func setup() {
+        progressBar.minValue = 0
+        progressBar.maxValue = activityStatus.activityTime
         // "About" window is opened as a modal so that it gets to the front.
         // We want to stop the modal in case a user opens popover while modal is still opened,
         // otherwise the UI of ViewController will halt.
         // TODO: think about better approach, this is clearly a hack :|
         NSApp.stopModal()
+        
+        timer.font = NSFont.monospacedDigitSystemFont(ofSize: 20, weight: NSFont.Weight.regular)
 
-        setAppVersion()
+        setAppNameLabel()
         displayStatus()
         displayTimer()
-        displayMutedButton()
 
         interval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.displayStatus()
             self.displayTimer()
         })
+        RunLoop.current.add(interval, forMode: .common)
     }
 
-    override func viewDidDisappear() {
+    func teardown() {
         interval.invalidate()
     }
 
-    @IBAction func onToggleMute(_ sender: NSButton) {
-        AppState.setIsMuted(!AppState.isMuted)
-        displayMutedButton()
-    }
-
-    @IBAction func onPreferencesPress(_ sender: NSButton) {
-        let preferencesMenu = NSMenu()
-        let launchAtLoginItem = NSMenuItem(
-            title: NSLocalizedString("menu_launch_login", comment: ""),
-            action: #selector(toggleLaunchAtLogin),
-            keyEquivalent: ""
-        )
-        launchAtLoginItem.state = AppState.launchAtLogin ? NSControl.StateValue.on : NSControl.StateValue.off
-        launchAtLoginItem.target = self
-
-        let quitItem = NSMenuItem(
-            title: NSLocalizedString("menu_quit", comment: ""),
-            action: #selector(quitApp),
-            keyEquivalent: "q"
-        )
-        quitItem.target = self
-
-        preferencesMenu.addItem(launchAtLoginItem)
-        preferencesMenu.addItem(quitItem)
-        preferencesMenu.popUp(
-            positioning: nil,
-            at: NSPoint(x: 0, y: sender.frame.height),
-            in: sender
-        )
-    }
-
-    @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
-        AppState.setLaunchAtLogin(!(sender.state as NSNumber).boolValue)
-    }
-
-    @objc func quitApp() {
-        exit(0)
-    }
-
-    func displayMutedButton() {
-        if (AppState.isMuted) {
-            isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputMuteTemplate")
-            isMutedButton.toolTip = NSLocalizedString("tooltip_unmute", comment: "")
-        } else {
-            isMutedButton.image = NSImage(named: "NSTouchBarAudioOutputVolumeHighTemplate")
-            isMutedButton.toolTip = NSLocalizedString("tooltip_mute", comment: "")
-        }
-        activityStatus.onActivityChange()
-    }
-
-    func setAppVersion() {
-        appVersionLabel.stringValue = AppVersion.getAppName() + " v" + AppVersion.getVersion()
+    func setAppNameLabel() {
+        appNameLabel.stringValue = AppVersion.getAppName()
     }
 
     func displayTimer() {
@@ -106,10 +63,18 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
         if (AppState.status == Status.Active) {
             timer.stringValue = formatter.string(from: now, to: activityStatus.activityTimer.fireDate) ?? initialValue
+            progressBar.maxValue = activityStatus.activityTime
+            progressBar.doubleValue = ((activityStatus.activityTime - activityStatus.activityTimer.fireDate.timeIntervalSinceNow) / activityStatus.activityTime) * activityStatus.activityTime
+            timer.textColor = NSColor.textColor
         } else if (AppState.status == Status.Break) {
             timer.stringValue = formatter.string(from: now, to: activityStatus.breakTimer.fireDate) ?? initialValue
+            progressBar.maxValue = activityStatus.breakTime
+            progressBar.doubleValue = ((activityStatus.breakTime - activityStatus.breakTimer.fireDate.timeIntervalSinceNow) / activityStatus.breakTime) * activityStatus.breakTime
+            timer.textColor = NSColor.systemRed
         } else {
             timer.stringValue = initialValue
+            timer.textColor = NSColor.textColor
+            progressBar.doubleValue = 0
         }
     }
 

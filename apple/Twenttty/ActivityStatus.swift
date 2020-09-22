@@ -57,6 +57,7 @@ class ActivityStatus {
                 self.startActivity()
             }
         })
+        RunLoop.current.add(activityMonitorTimer, forMode: .common)
     }
 
     func invalidateTimers() {
@@ -75,6 +76,8 @@ class ActivityStatus {
         clockUITimer = Timer.scheduledTimer(withTimeInterval: activityTime / 12, repeats: true, block: { _ in
             self.onActivityChange()
         })
+        RunLoop.current.add(activityTimer, forMode: .common)
+        RunLoop.current.add(clockUITimer, forMode: .common)
         onActivityChange()
     }
 
@@ -89,6 +92,8 @@ class ActivityStatus {
         clockUITimer = Timer.scheduledTimer(withTimeInterval: breakTime / 12, repeats: true, block: { _ in
             self.onActivityChange()
         })
+        RunLoop.current.add(breakTimer, forMode: .common)
+        RunLoop.current.add(clockUITimer, forMode: .common)
         onActivityChange()
     }
 
