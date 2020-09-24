@@ -26,11 +26,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     func setup() {
         progressBar.minValue = 0
         progressBar.maxValue = activityStatus.activityTime
-        // "About" window is opened as a modal so that it gets to the front.
-        // We want to stop the modal in case a user opens popover while modal is still opened,
-        // otherwise the UI of ViewController will halt.
-        // TODO: think about better approach, this is clearly a hack :|
-        NSApp.stopModal()
         
         timer.font = NSFont.monospacedDigitSystemFont(ofSize: 20, weight: NSFont.Weight.regular)
 

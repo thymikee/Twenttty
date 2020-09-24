@@ -10,11 +10,7 @@
 "notification_content_9" = "Just look away please, sky is the limit";
 "notification_content_10" = "Look at something 6m or further away from you";
 "notification_title" = "Break time!";
-"menu_launch_login" = "Launch at Login";
-"menu_quit" = "Quit";
-"status_active" = "next break in:";
-"status_break" = "break ends in:";
-"status_inactive" = "analyzing...";
-"tooltip_unmute" = "Unmute";
-"tooltip_mute" = "Mute";
+"status_active" = "Next break in:";
+"status_break" = "Break ends in:";
+"status_inactive" = "Awaiting activity...";
 "version" = "Version";

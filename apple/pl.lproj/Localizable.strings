@@ -10,11 +10,7 @@
 "notification_content_9" = "Poprostu oderwij wzrok, sięgnij gwiazd";
 "notification_content_10" = "Spójrz na coś 6 metrów lub dalej od ciebie";
 "notification_title" = "Czas na przerwę!";
-"menu_launch_login" = "Uruchom przy logowaniu";
-"menu_quit" = "Zakończ";
-"status_active" = "następna przerwa za:";
-"status_break" = "koniec przerwy za:";
-"status_inactive" = "analizuję...";
-"tooltip_unmute" = "Włącz dźwięk";
-"tooltip_mute" = "Wycisz";
+"status_active" = "Następna przerwa za:";
+"status_break" = "Koniec przerwy za:";
+"status_inactive" = "Czekam na ruch...";
 "version" = "Wersja";

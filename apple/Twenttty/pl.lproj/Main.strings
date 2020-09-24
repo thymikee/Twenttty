@@ -36,7 +36,7 @@
 "4J7-dP-txa.title" = "Enter Full Screen";
 
 /* Class = "NSMenuItem"; title = "Quit Twenttty"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit Twenttty";
+"4sb-4s-VLi.title" = "Zakończ Twenttty";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "5QF-Oa-p0T"; */
 "5QF-Oa-p0T.title" = "Edit";
@@ -45,7 +45,7 @@
 "5Vv-lz-BsD.title" = "Copy Style";
 
 /* Class = "NSMenuItem"; title = "About Twenttty"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About Twenttty";
+"5kV-Vb-QxS.title" = "O Twenttty";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "6dh-zS-Vam"; */
 "6dh-zS-Vam.title" = "Redo";
@@ -133,9 +133,6 @@
 
 /* Class = "NSMenuItem"; title = "Use None"; ObjectID = "J7y-lM-qPV"; */
 "J7y-lM-qPV.title" = "Use None";
-
-/* Class = "NSButton"; ibShadowedToolTip = "About"; ObjectID = "JZr-RV-ljg"; */
-"JZr-RV-ljg.ibShadowedToolTip" = "O aplikacji";
 
 /* Class = "NSMenuItem"; title = "Revert to Saved"; ObjectID = "KaW-ft-85H"; */
 "KaW-ft-85H.title" = "Revert to Saved";
@@ -363,7 +360,7 @@
 "qIS-W8-SiK.title" = "Page Setup…";
 
 /* Class = "NSWindow"; title = "About"; ObjectID = "qbr-pc-xom"; */
-"qbr-pc-xom.title" = "O aplikacji";
+"qbr-pc-xom.title" = "O Twenttty";
 
 /* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "rbD-Rh-wIN"; */
 "rbD-Rh-wIN.title" = "Check Spelling While Typing";
@@ -429,4 +426,10 @@
 "z6F-FW-3nz.title" = "Show Substitutions";
 
 /* Class = "NSTextFieldCell"; title = "Take a 20 second break  every 20 minutes by looking  20 feet (6m) away"; ObjectID = "zEQ-D1-qPM"; */
-"zEQ-D1-qPM.title" = "Zrób 20-sekundową przerwę  co 20 minut, patrząc  20 stóp (6 metrów) w dal.";
+"zEQ-D1-qPM.title" = "Zrób 20-sekundową przerwę  co 20 minut, patrząc co najmniej  20 stóp (6 metrów) w dal.";
+
+/* Class = "NSMenuItem"; title = "Play Sounds"; ObjectID = "l3T-1z-so3"; */
+"l3T-1z-so3.title" = "Odtwarzaj Dźwięki";
+
+/* Class = "NSMenuItem"; title = "Launch at Login"; ObjectID = "3YY-gC-Qra"; */
+"3YY-gC-Qra.title" = "Uruchom przy Logowaniu";
