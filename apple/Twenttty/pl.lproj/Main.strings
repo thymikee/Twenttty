@@ -428,8 +428,8 @@
 /* Class = "NSTextFieldCell"; title = "Take a 20 second break  every 20 minutes by looking  20 feet (6m) away"; ObjectID = "zEQ-D1-qPM"; */
 "zEQ-D1-qPM.title" = "Zrób 20-sekundową przerwę  co 20 minut, patrząc co najmniej  20 stóp (6 metrów) w dal.";
 
-/* Class = "NSMenuItem"; title = "Play Sounds"; ObjectID = "l3T-1z-so3"; */
-"l3T-1z-so3.title" = "Odtwarzaj Dźwięki";
+/* Class = "NSMenuItem"; title = "Mute"; ObjectID = "l3T-1z-so3"; */
+"l3T-1z-so3.title" = "Wycisz";
 
 /* Class = "NSMenuItem"; title = "Launch at Login"; ObjectID = "3YY-gC-Qra"; */
 "3YY-gC-Qra.title" = "Uruchom przy Logowaniu";

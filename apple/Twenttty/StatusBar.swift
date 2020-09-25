@@ -66,7 +66,7 @@ class StatusBar: NSObject, ActivityStatusDelegate {
         }
 
         if (AppState.isMuted) {
-            statusItem.button?.contentTintColor = NSColor.systemGray
+            statusItem.button?.contentTintColor = NSColor.disabledControlTextColor
         }
     }
 

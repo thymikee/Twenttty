@@ -39,7 +39,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Play Sounds" id="l3T-1z-so3">
+                                        <menuItem title="Mute" id="l3T-1z-so3">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <attributedString key="userComments">
                                                 <fragment content="play sounds"/>

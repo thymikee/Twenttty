@@ -18,16 +18,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setupStatusBar()
+        toggleMenuSoundsState()
+        toggleLaunchAtLoginState()
     }
     
     func setupStatusBar() {
-        toggleMenuSoundsState()
-        toggleLaunchAtLoginState()
         statusBar = StatusBar(menu, firstMenuItem)
     }
     
     func toggleMenuSoundsState() {
-        menuSounds.state = AppState.isMuted ? NSControl.StateValue.off : NSControl.StateValue.on
+        menuSounds.state = AppState.isMuted ? NSControl.StateValue.on : NSControl.StateValue.off
     }
     
     func toggleLaunchAtLoginState() {
