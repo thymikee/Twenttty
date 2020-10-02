@@ -72,7 +72,7 @@ class StatusBar: NSObject, ActivityStatusDelegate {
 
     func getImageForTimeLeft(_ timeLeft: TimeInterval, _ base: Double) -> String {
         let timePercent = timeLeft / base
-        return String(Int(floor((1 - timePercent) * 12)))
+        return String(Int(round((1 - timePercent) * 12)))
     }
 
     func getView() -> ViewController {
