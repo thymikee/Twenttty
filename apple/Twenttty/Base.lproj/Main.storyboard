@@ -14,6 +14,7 @@
                         <outlet property="firstMenuItem" destination="ODx-1V-XGr" id="3CS-uC-ixu"/>
                         <outlet property="menu" destination="uQy-DD-JDr" id="dsu-k4-XRU"/>
                         <outlet property="menuLaunchAtLogin" destination="3YY-gC-Qra" id="8Jr-E1-8Fg"/>
+                        <outlet property="menuNotifications" destination="24I-uD-pTC" id="jNp-1c-K1p"/>
                         <outlet property="menuSounds" destination="l3T-1z-so3" id="vMA-qj-61h"/>
                     </connections>
                 </customObject>
@@ -39,6 +40,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="⚠️ Allow Notifications" hidden="YES" identifier="menuNotifications" id="24I-uD-pTC">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="onMenuNotificationsPress:" target="Voe-Tx-rLC" id="GeO-9l-Xwp"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Mute" id="l3T-1z-so3">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <attributedString key="userComments">
@@ -73,7 +80,7 @@
                     </connections>
                 </application>
             </objects>
-            <point key="canvasLocation" x="-76" y="223"/>
+            <point key="canvasLocation" x="-76" y="333"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="WiP-wN-oRp">
@@ -183,14 +190,14 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="Twenttty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="222" height="69"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="0.0" y="0.0" width="222" height="81"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressIndicator wantsLayer="YES" maxValue="100" doubleValue="50" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="lRp-q6-tZc">
-                                <rect key="frame" x="20" y="0.0" width="182" height="12"/>
+                                <rect key="frame" x="20" y="4" width="182" height="12"/>
                             </progressIndicator>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-R9-6N3">
-                                <rect key="frame" x="18" y="20" width="122" height="14"/>
+                                <rect key="frame" x="18" y="24" width="122" height="14"/>
                                 <textFieldCell key="cell" alignment="left" title="Next break in:" id="oG7-O4-YaM">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -198,7 +205,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-BQ-6ZO">
-                                <rect key="frame" x="144" y="19" width="60" height="23"/>
+                                <rect key="frame" x="144" y="23" width="60" height="23"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="right" title="00:00" id="fti-eq-dJj">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -206,11 +213,11 @@
                                 </textFieldCell>
                             </textField>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="AKA-v4-4wL">
-                                <rect key="frame" x="186" y="45" width="16" height="16"/>
+                                <rect key="frame" x="186" y="57" width="16" height="16"/>
                                 <imageCell key="cell" controlSize="small" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSStatusNone" id="HcM-5h-kSd"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Tx-Js-noR">
-                                <rect key="frame" x="18" y="45" width="63" height="16"/>
+                                <rect key="frame" x="18" y="57" width="63" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Twenttty" id="9aw-bg-zWM">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -230,7 +237,7 @@
                             <constraint firstAttribute="trailing" secondItem="QWD-BQ-6ZO" secondAttribute="trailing" constant="20" symbolic="YES" id="RZ8-9x-pl0"/>
                             <constraint firstItem="5Tx-Js-noR" firstAttribute="centerY" secondItem="AKA-v4-4wL" secondAttribute="centerY" id="ecX-n3-Qlh"/>
                             <constraint firstAttribute="trailing" secondItem="lRp-q6-tZc" secondAttribute="trailing" constant="20" symbolic="YES" id="hNn-0s-oja"/>
-                            <constraint firstAttribute="bottom" secondItem="lRp-q6-tZc" secondAttribute="bottom" id="jX7-Q6-x9W"/>
+                            <constraint firstAttribute="bottom" secondItem="lRp-q6-tZc" secondAttribute="bottom" constant="4" id="jX7-Q6-x9W"/>
                             <constraint firstItem="lRp-q6-tZc" firstAttribute="top" secondItem="gl2-R9-6N3" secondAttribute="bottom" constant="8" symbolic="YES" id="qEO-3l-Vbh"/>
                             <constraint firstItem="gl2-R9-6N3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="y75-De-oSQ"/>
                         </constraints>
@@ -245,7 +252,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="123.5"/>
+            <point key="canvasLocation" x="-22" y="129.5"/>
         </scene>
     </scenes>
     <resources>

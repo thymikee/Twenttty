@@ -16,15 +16,20 @@ class BreakNotification {
     let endBreakSoundName = "EndBreak.wav"
 
     init() {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            self.isGranted = granted
-        }
+        requestNotificationPermission() { _ in }
     }
 
     deinit {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
+    }
+    
+    func requestNotificationPermission(completionBlock: @escaping (_ result: Bool) -> Void) {
+        let center = UNUserNotificationCenter.current()
+        return center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            self.isGranted = granted
+            completionBlock(granted)
+        }
     }
 
     func startBreak() {

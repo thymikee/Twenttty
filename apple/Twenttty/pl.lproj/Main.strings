@@ -433,3 +433,7 @@
 
 /* Class = "NSMenuItem"; title = "Launch at Login"; ObjectID = "3YY-gC-Qra"; */
 "3YY-gC-Qra.title" = "Uruchom przy Logowaniu";
+
+/* Class = "NSMenuItem"; title = "⚠️ Allow Notifications"; ObjectID = "24I-uD-pTC"; */
+"24I-uD-pTC.title" = "⚠️ Zezwól na Powiadomienia";
+

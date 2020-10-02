@@ -88,6 +88,14 @@ class StatusBar: NSObject, ActivityStatusDelegate {
 extension StatusBar: NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
         mainView?.setup()
+        
+        activityStatus.breakNotification.requestNotificationPermission() { granted in
+            menu.items.forEach({ menuItem in
+                if (menuItem.identifier?.rawValue == "menuNotifications") {
+                    menuItem.isHidden = granted
+                }
+            })
+        }
     }
     
     func menuDidClose(_ menu: NSMenu) {

@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var firstMenuItem: NSMenuItem?
     @IBOutlet weak var menuSounds: NSMenuItem!
     @IBOutlet weak var menuLaunchAtLogin: NSMenuItem!
+    @IBOutlet weak var menuNotifications: NSMenuItem!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setupStatusBar()
@@ -39,9 +40,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         toggleMenuSoundsState()
         statusBar?.activityStatus.onActivityChange()
     }
+    
     @IBAction func onMenuLaunchAtLoginPress(_ sender: NSMenuItem) {
         AppState.setLaunchAtLogin(!AppState.launchAtLogin)
         toggleLaunchAtLoginState()
+    }
+    
+    @IBAction func onMenuNotificationsPress(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(fileURLWithPath: "x-apple.systempreferences:com.apple.preference.notifications"))
     }
 }
 
