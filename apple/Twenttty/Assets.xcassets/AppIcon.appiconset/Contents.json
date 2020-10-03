@@ -1,68 +1,84 @@
 {
-  "images" : [
+  "images": [
     {
-      "filename" : "16.png",
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "16x16"
+      "size": "128x128",
+      "expected-size": "128",
+      "filename": "128.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "1x"
     },
     {
-      "filename" : "32.png",
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "16x16"
+      "size": "256x256",
+      "expected-size": "256",
+      "filename": "256.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "1x"
     },
     {
-      "filename" : "32-1.png",
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "32x32"
+      "size": "128x128",
+      "expected-size": "256",
+      "filename": "256.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "2x"
     },
     {
-      "filename" : "64.png",
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "32x32"
+      "size": "256x256",
+      "expected-size": "512",
+      "filename": "512.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "2x"
     },
     {
-      "filename" : "128.png",
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "128x128"
+      "size": "32x32",
+      "expected-size": "32",
+      "filename": "32.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "1x"
     },
     {
-      "filename" : "256-2.png",
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "128x128"
+      "size": "512x512",
+      "expected-size": "512",
+      "filename": "512.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "1x"
     },
     {
-      "filename" : "256-1.png",
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "256x256"
+      "size": "16x16",
+      "expected-size": "16",
+      "filename": "16.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "1x"
     },
     {
-      "filename" : "512-2.png",
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "256x256"
+      "size": "16x16",
+      "expected-size": "32",
+      "filename": "32.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "2x"
     },
     {
-      "filename" : "512-1.png",
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "512x512"
+      "size": "32x32",
+      "expected-size": "64",
+      "filename": "64.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "2x"
     },
     {
-      "filename" : "1024.png",
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "512x512"
+      "size": "512x512",
+      "expected-size": "1024",
+      "filename": "1024.png",
+      "folder": "Assets.xcassets/AppIcon.appiconset/",
+      "idiom": "mac",
+      "scale": "2x"
     }
-  ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
-  }
+  ]
 }
