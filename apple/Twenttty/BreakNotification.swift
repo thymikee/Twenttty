@@ -49,13 +49,13 @@ class BreakNotification {
     }
 
     func scheduleNotification(content: UNMutableNotificationContent, fallbackSound: String) {
-        if (AppState.isMuted) {
-            return
-        }
-
-        if (!isGranted) {
+        if (!isGranted && !AppState.isMuted) {
             NSSound(named: fallbackSound)?.play()
             return
+        }
+        
+        if (AppState.isMuted) {
+            content.sound = nil
         }
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
