@@ -84,7 +84,7 @@ class ActivityStatus {
     func startBreak() {
         invalidateTimers()
         AppState.setStatus(Status.Break)
-        breakNotification.startBreak()
+        breakNotification.startBreak(duration: breakTime)
         breakTimer = Timer.scheduledTimer(withTimeInterval: breakTime, repeats: false, block: { _ in
             self.breakNotification.endBreak()
             self.startInactivity()

@@ -26,19 +26,19 @@ class BreakNotification {
     
     func requestNotificationPermission(completionBlock: @escaping (_ result: Bool) -> Void) {
         let center = UNUserNotificationCenter.current()
-        return center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+        return center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             self.isGranted = granted
             completionBlock(granted)
         }
     }
 
-    func startBreak() {
+    func startBreak(duration: Double) {
         let content = UNMutableNotificationContent()
         content.title = NSLocalizedString("notification_title", comment: "")
         content.body = getRandomNotificationBody()
         content.sound = UNNotificationSound(named: UNNotificationSoundName(startBreakSoundName))
 
-        scheduleNotification(content: content, fallbackSound: startBreakSoundName)
+        scheduleNotification(content: content, fallbackSound: startBreakSoundName, removeAfterTimeInterval: duration)
     }
 
     func endBreak() {
@@ -48,7 +48,7 @@ class BreakNotification {
         scheduleNotification(content: content, fallbackSound: endBreakSoundName)
     }
 
-    func scheduleNotification(content: UNMutableNotificationContent, fallbackSound: String) {
+    func scheduleNotification(content: UNMutableNotificationContent, fallbackSound: String, removeAfterTimeInterval: Double? = nil) {
         if (!isGranted && !AppState.isMuted) {
             NSSound(named: fallbackSound)?.play()
             return
@@ -65,6 +65,12 @@ class BreakNotification {
             if error != nil {
                 // no need to handle for now
             }
+        }
+
+        if let timeInterval = removeAfterTimeInterval {
+            Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
+                center.removeDeliveredNotifications(withIdentifiers: [request.identifier])
+            })
         }
     }
 
