@@ -11,26 +11,11 @@ import Cocoa
 class StatusBar: NSObject, ActivityStatusDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let statusBarIcon = NSImage(named: "12")
-    let popover = NSPopover()
-    let activityStatus = ActivityStatus()
-    var mainMenu: NSMenu?
-    var firstMenuItem: NSMenuItem?
-    var mainView: ViewController?
+    var activityStatus = ActivityStatus()
 
-    init(_ menu: NSMenu?, _ firstMenuItem: NSMenuItem?) {
+    override init() {
         super.init()
         
-        if let menu = menu {
-            mainMenu = menu
-            statusItem.menu = menu
-            menu.delegate = self
-        }
-        
-        if let item = firstMenuItem {
-            mainView = getView()
-            item.view = mainView?.view
-        }
-
         activityStatus.delegate = self
         initStatusBarIcon()
     }
@@ -73,32 +58,5 @@ class StatusBar: NSObject, ActivityStatusDelegate {
     func getImageForTimeLeft(_ timeLeft: TimeInterval, _ base: Double) -> String {
         let timePercent = timeLeft / base
         return String(Int(round((1 - timePercent) * 12)))
-    }
-
-    func getView() -> ViewController {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
-            fatalError("Unable to find ViewController")
-        }
-        vc.activityStatus = activityStatus
-        return vc
-    }
-}
-
-extension StatusBar: NSMenuDelegate {
-    func menuWillOpen(_ menu: NSMenu) {
-        mainView?.setup()
-        
-        activityStatus.breakNotification.requestNotificationPermission() { granted in
-            menu.items.forEach({ menuItem in
-                if (menuItem.identifier?.rawValue == "menuNotifications") {
-                    menuItem.isHidden = granted
-                }
-            })
-        }
-    }
-    
-    func menuDidClose(_ menu: NSMenu) {
-        mainView?.teardown()
     }
 }

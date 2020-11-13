@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,8 +14,8 @@
                         <outlet property="firstMenuItem" destination="ODx-1V-XGr" id="3CS-uC-ixu"/>
                         <outlet property="menu" destination="uQy-DD-JDr" id="dsu-k4-XRU"/>
                         <outlet property="menuLaunchAtLogin" destination="3YY-gC-Qra" id="8Jr-E1-8Fg"/>
+                        <outlet property="menuMuted" destination="l3T-1z-so3" id="vMA-qj-61h"/>
                         <outlet property="menuNotifications" destination="24I-uD-pTC" id="jNp-1c-K1p"/>
-                        <outlet property="menuSounds" destination="l3T-1z-so3" id="vMA-qj-61h"/>
                     </connections>
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
