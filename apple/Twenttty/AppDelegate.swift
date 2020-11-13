@@ -25,7 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func setupStatusBar() {
         statusBar = StatusBar()
-        statusBar?.statusItem.menu = menu
     }
     
     func setupMenu() {
@@ -33,8 +32,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainView = getView()
         firstMenuItem?.view = mainView?.view
         
+        if let button = statusBar?.statusItem.button {
+            button.target = self
+            button.action = #selector(self.statusBarButtonClicked(sender:))
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        }
+        
         setMenuMutedState()
         setLaunchAtLoginState()
+    }
+    
+    @objc func statusBarButtonClicked(sender: NSStatusBarButton) {
+        if let event = NSApp.currentEvent, event.type == NSEvent.EventType.leftMouseUp, event.modifierFlags.contains(.option) {
+            onMenuSoundsPress(nil)
+        } else {
+            statusBar?.statusItem.menu = menu
+            statusBar?.statusItem.button?.performClick(nil)
+        }
     }
     
     func setMenuMutedState() {
@@ -85,5 +99,7 @@ extension AppDelegate: NSMenuDelegate {
     
     func menuDidClose(_ menu: NSMenu) {
         mainView?.teardown()
+        // menu must be nil for statusItem.button action to be actionable
+        statusBar?.statusItem.menu = nil
     }
 }
