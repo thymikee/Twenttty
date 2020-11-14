@@ -49,10 +49,8 @@ class StatusBar: NSObject, ActivityStatusDelegate {
             statusItem.button?.image = statusBarIcon
             statusItem.button?.contentTintColor = nil
         }
-
-        if (AppState.isMuted) {
-            statusItem.button?.contentTintColor = NSColor.disabledControlTextColor
-        }
+        
+        statusItem.button?.appearsDisabled = AppState.isMuted
     }
 
     func getImageForTimeLeft(_ timeLeft: TimeInterval, _ base: Double) -> String {
