@@ -13,9 +13,6 @@
 /* Class = "NSTextFieldCell"; title = "Copyright © Michał Pierzchała"; ObjectID = "ejY-5k-kYs"; */
 "ejY-5k-kYs.title" = "Urheberrecht © Michał Pierzchała";
 
-/* Class = "NSTextFieldCell"; title = "00:00"; ObjectID = "fti-eq-dJj"; */
-"fti-eq-dJj.title" = "00:00";
-
 /* Class = "NSMenuItem"; title = "Mute"; ObjectID = "l3T-1z-so3"; Note = "play sounds"; */
 "l3T-1z-so3.title" = "Stumm";
 
