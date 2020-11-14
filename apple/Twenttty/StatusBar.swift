@@ -25,7 +25,13 @@ class StatusBar: NSObject, ActivityStatusDelegate {
 
     func updateStatusItemImage() {
         statusItem.button?.image = getIcon(AppState.status)
-        statusItem.button?.contentTintColor = AppState.status == Status.Break ? NSColor.systemRed : nil
+        if #available(macOS 11, *) {
+            // macOS Big Sur doesn't respect contentTintColor in NSStatusItemButton, fall back to changing opacity
+            statusItem.button?.alphaValue = AppState.status == Status.Break ? 0.7 : 1
+        } else {
+            statusItem.button?.contentTintColor = AppState.status == Status.Break ? NSColor.systemRed : nil
+        }
+
         statusItem.button?.appearsDisabled = AppState.isMuted
     }
     
