@@ -10,20 +10,13 @@ import Cocoa
 
 class StatusBar: NSObject, ActivityStatusDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    let statusBarIcon = NSImage(named: "12")
-    var activityStatus = ActivityStatus()
+    let activityStatus = ActivityStatus()
 
     override init() {
         super.init()
         
         activityStatus.delegate = self
-        initStatusBarIcon()
-    }
-
-    func initStatusBarIcon() {
-        statusBarIcon?.isTemplate = true
-        statusItem.button?.image = statusBarIcon
-        statusItem.button?.target = self
+        updateStatusItemImage()
     }
 
     func onActivityChange(_ sender: ActivityStatus) {
@@ -31,26 +24,23 @@ class StatusBar: NSObject, ActivityStatusDelegate {
     }
 
     func updateStatusItemImage() {
-        if (AppState.status == Status.Active) {
-            let timeLeft = abs(Date().timeIntervalSince(activityStatus.activityTimer.fireDate))
-            let iconName = getImageForTimeLeft(timeLeft, activityStatus.activityTime)
-            let icon = NSImage(named: iconName)
-            icon?.isTemplate = true
-            statusItem.button?.image = icon
-            statusItem.button?.contentTintColor = nil
-        } else if (AppState.status == Status.Break) {
-            let timeLeft = abs(Date().timeIntervalSince(activityStatus.breakTimer.fireDate))
-            let iconName = getImageForTimeLeft(timeLeft, activityStatus.breakTime)
-            let icon = NSImage(named: iconName)
-            icon?.isTemplate = true
-            statusItem.button?.image = icon
-            statusItem.button?.contentTintColor = NSColor.systemRed
-        } else {
-            statusItem.button?.image = statusBarIcon
-            statusItem.button?.contentTintColor = nil
-        }
-        
+        statusItem.button?.image = getIcon(AppState.status)
+        statusItem.button?.contentTintColor = AppState.status == Status.Break ? NSColor.systemRed : nil
         statusItem.button?.appearsDisabled = AppState.isMuted
+    }
+    
+    func getIcon(_ status: Status) -> NSImage? {
+        var iconName: String = "12";
+        if (status == Status.Active) {
+            let timeLeft = abs(Date().timeIntervalSince(activityStatus.activityTimer.fireDate))
+            iconName = getImageForTimeLeft(timeLeft, activityStatus.activityTime)
+        } else if (status == Status.Break) {
+            let timeLeft = abs(Date().timeIntervalSince(activityStatus.breakTimer.fireDate))
+            iconName = getImageForTimeLeft(timeLeft, activityStatus.breakTime)
+        }
+        let icon = NSImage(named: iconName)
+        icon?.isTemplate = true
+        return icon
     }
 
     func getImageForTimeLeft(_ timeLeft: TimeInterval, _ base: Double) -> String {
