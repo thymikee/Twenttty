@@ -1,0 +1,26 @@
+/* Class = "NSMenuItem"; title = "⚠️ Allow Notifications"; ObjectID = "24I-uD-pTC"; */
+"24I-uD-pTC.title" = "⚠️ 通知を許可する";
+
+/* Class = "NSMenuItem"; title = "Launch at Login"; ObjectID = "3YY-gC-Qra"; Note = "launch at login"; */
+"3YY-gC-Qra.title" = "ログイン時に起動";
+
+/* Class = "NSMenuItem"; title = "Quit Twenttty"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Twentttyを終了します";
+
+/* Class = "NSMenuItem"; title = "About"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Twentttyについて";
+
+/* Class = "NSTextFieldCell"; title = "Copyright © Michał Pierzchała"; ObjectID = "ejY-5k-kYs"; */
+"ejY-5k-kYs.title" = "著作権 © Michał Pierzchała";
+
+/* Class = "NSMenuItem"; title = "Mute"; ObjectID = "l3T-1z-so3"; Note = "play sounds"; */
+"l3T-1z-so3.title" = "ミュート";
+
+/* Class = "NSWindow"; title = "About"; ObjectID = "qbr-pc-xom"; */
+"qbr-pc-xom.title" = "ぐらい";
+
+/* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "z2C-eW-6ZQ"; */
+"z2C-eW-6ZQ.title" = "バージョン 1.0";
+
+/* Class = "NSTextFieldCell"; title = "Take a 20 second break  every 20 minutes by looking  at least 20 feet (6m) away."; ObjectID = "zEQ-D1-qPM"; */
+"zEQ-D1-qPM.title" = "少なくとも20フィート（6m）離れたところを見て、20分ごとに20秒の休憩を取ります。";
