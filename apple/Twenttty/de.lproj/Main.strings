@@ -1,0 +1,33 @@
+/* Class = "NSMenuItem"; title = "⚠️ Allow Notifications"; ObjectID = "24I-uD-pTC"; */
+"24I-uD-pTC.title" = "⚠️ Benachrichtigungen zulassen";
+
+/* Class = "NSMenuItem"; title = "Launch at Login"; ObjectID = "3YY-gC-Qra"; Note = "launch at login"; */
+"3YY-gC-Qra.title" = "Start beim Login";
+
+/* Class = "NSMenuItem"; title = "Quit Twenttty"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Beenden Sie Twenttty";
+
+/* Class = "NSMenuItem"; title = "About"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Über";
+
+/* Class = "NSTextFieldCell"; title = "Copyright © Michał Pierzchała"; ObjectID = "ejY-5k-kYs"; */
+"ejY-5k-kYs.title" = "Urheberrecht © Michał Pierzchała";
+
+/* Class = "NSTextFieldCell"; title = "00:00"; ObjectID = "fti-eq-dJj"; */
+"fti-eq-dJj.title" = "00:00";
+
+/* Class = "NSMenuItem"; title = "Mute"; ObjectID = "l3T-1z-so3"; Note = "play sounds"; */
+"l3T-1z-so3.title" = "Stumm";
+
+/* Class = "NSWindow"; title = "About"; ObjectID = "qbr-pc-xom"; */
+"qbr-pc-xom.title" = "Über";
+
+/* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "z2C-eW-6ZQ"; */
+"z2C-eW-6ZQ.title" = "Version 1.0";
+
+/* Class = "NSTextFieldCell"; title = "Take a 20 second break  every 20 minutes by looking  at least 20 feet (6m) away."; ObjectID = "zEQ-D1-qPM"; */
+"zEQ-D1-qPM.title" = "Machen Sie alle 20 Minuten
+
+eine 20-Sekunden-Pause, indem Sie
+
+mindestens 6 m (20 Fuß) weit blicken.";
