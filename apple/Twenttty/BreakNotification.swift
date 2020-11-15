@@ -68,9 +68,10 @@ class BreakNotification {
         }
 
         if let timeInterval = removeAfterTimeInterval {
-            Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
+            let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
                 center.removeDeliveredNotifications(withIdentifiers: [request.identifier])
             })
+            RunLoop.current.add(timer, forMode: .common)
         }
     }
 
