@@ -21,6 +21,31 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if #available(macOS 11, *) {
+            adjustConstraintsForBigSur()
+        }
+    }
+
+    @available(macOS 11, *)
+    func adjustConstraintsForBigSur() {
+        let leading = CGFloat(14)
+        let trailing = CGFloat(-14)
+
+        appNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        statusImage.translatesAutoresizingMaskIntoConstraints = false
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        timer.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            appNameLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: leading),
+            statusLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: leading),
+            progressBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: leading),
+            progressBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: trailing),
+            statusImage.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: trailing),
+            timer.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: trailing),
+        ])
     }
 
     func setup() {

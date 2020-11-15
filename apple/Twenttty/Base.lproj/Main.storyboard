@@ -219,20 +219,20 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="5Tx-Js-noR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="28b-XI-adA"/>
-                            <constraint firstItem="lRp-q6-tZc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="3xf-KK-1yl"/>
+                            <constraint firstItem="5Tx-Js-noR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" priority="750" constant="20" symbolic="YES" id="28b-XI-adA"/>
+                            <constraint firstItem="lRp-q6-tZc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" priority="750" constant="20" symbolic="YES" id="3xf-KK-1yl"/>
                             <constraint firstItem="gl2-R9-6N3" firstAttribute="firstBaseline" secondItem="QWD-BQ-6ZO" secondAttribute="firstBaseline" id="6IW-9p-c9D"/>
-                            <constraint firstAttribute="trailing" secondItem="AKA-v4-4wL" secondAttribute="trailing" constant="20" symbolic="YES" id="8z1-c3-F7C"/>
+                            <constraint firstAttribute="trailing" secondItem="AKA-v4-4wL" secondAttribute="trailing" priority="750" constant="20" symbolic="YES" id="8z1-c3-F7C"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Tx-Js-noR" secondAttribute="trailing" constant="143" id="9Lb-ep-iwy"/>
                             <constraint firstItem="5Tx-Js-noR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="Iz3-B5-KXw"/>
                             <constraint firstItem="QWD-BQ-6ZO" firstAttribute="width" secondItem="gl2-R9-6N3" secondAttribute="height" multiplier="4:1" id="J3v-Ku-xlf"/>
                             <constraint firstItem="QWD-BQ-6ZO" firstAttribute="leading" secondItem="gl2-R9-6N3" secondAttribute="trailing" constant="8" symbolic="YES" id="Jip-qP-tdu"/>
-                            <constraint firstAttribute="trailing" secondItem="QWD-BQ-6ZO" secondAttribute="trailing" constant="20" symbolic="YES" id="RZ8-9x-pl0"/>
+                            <constraint firstAttribute="trailing" secondItem="QWD-BQ-6ZO" secondAttribute="trailing" priority="750" constant="20" symbolic="YES" id="RZ8-9x-pl0"/>
                             <constraint firstItem="5Tx-Js-noR" firstAttribute="centerY" secondItem="AKA-v4-4wL" secondAttribute="centerY" id="ecX-n3-Qlh"/>
-                            <constraint firstAttribute="trailing" secondItem="lRp-q6-tZc" secondAttribute="trailing" constant="20" symbolic="YES" id="hNn-0s-oja"/>
+                            <constraint firstAttribute="trailing" secondItem="lRp-q6-tZc" secondAttribute="trailing" priority="750" constant="20" symbolic="YES" id="hNn-0s-oja"/>
                             <constraint firstAttribute="bottom" secondItem="lRp-q6-tZc" secondAttribute="bottom" constant="4" id="jX7-Q6-x9W"/>
                             <constraint firstItem="lRp-q6-tZc" firstAttribute="top" secondItem="gl2-R9-6N3" secondAttribute="bottom" constant="8" symbolic="YES" id="qEO-3l-Vbh"/>
-                            <constraint firstItem="gl2-R9-6N3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="y75-De-oSQ"/>
+                            <constraint firstItem="gl2-R9-6N3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" priority="750" constant="20" symbolic="YES" id="y75-De-oSQ"/>
                         </constraints>
                     </view>
                     <connections>
