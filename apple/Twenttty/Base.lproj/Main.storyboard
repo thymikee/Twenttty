@@ -117,7 +117,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ns5-Dc-BhZ">
-                                <rect key="frame" x="112" y="41" width="61" height="13"/>
+                                <rect key="frame" x="112" y="38" width="61" height="13"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0" id="z2C-eW-6ZQ">
                                     <font key="font" metaFont="system" size="10"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -125,9 +125,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dvB-iV-0co">
-                                <rect key="frame" x="57" y="66" width="171" height="45"/>
+                                <rect key="frame" x="51" y="63" width="182" height="48"/>
                                 <textFieldCell key="cell" selectable="YES" alignment="center" title="Take a 20 second break  every 20 minutes by looking  at least 20 feet (6m) away." id="zEQ-D1-qPM">
-                                    <font key="font" metaFont="cellTitle"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -152,14 +152,19 @@
                         <constraints>
                             <constraint firstItem="h4d-iZ-mcx" firstAttribute="top" secondItem="ax0-SD-wBR" secondAttribute="bottom" constant="12" id="0jL-yB-W4v"/>
                             <constraint firstItem="Ns5-Dc-BhZ" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="24z-IR-cPJ"/>
+                            <constraint firstItem="dvB-iV-0co" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="BnE-YQ-wKg"/>
+                            <constraint firstItem="0e2-JM-dCu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X2D-tt-SZb" secondAttribute="leading" constant="40" id="FnF-JR-8GS"/>
+                            <constraint firstItem="dvB-iV-0co" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X2D-tt-SZb" secondAttribute="leading" constant="40" id="G3p-35-8xv"/>
                             <constraint firstItem="h4d-iZ-mcx" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="GmF-9E-4oP"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="top" secondItem="X2D-tt-SZb" secondAttribute="top" constant="20" id="J2m-Aj-TCf"/>
                             <constraint firstItem="dvB-iV-0co" firstAttribute="top" secondItem="h4d-iZ-mcx" secondAttribute="bottom" constant="12" id="KY3-kt-A9e"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="top" secondItem="X2D-tt-SZb" secondAttribute="top" constant="20" id="RVJ-aG-Qy5"/>
+                            <constraint firstItem="0e2-JM-dCu" firstAttribute="top" secondItem="Ns5-Dc-BhZ" secondAttribute="bottom" constant="5" id="aJr-kY-dlm"/>
                             <constraint firstItem="h4d-iZ-mcx" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="b5e-oa-lUb"/>
                             <constraint firstItem="0e2-JM-dCu" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="hDc-l4-h7C"/>
                             <constraint firstItem="Ns5-Dc-BhZ" firstAttribute="top" secondItem="dvB-iV-0co" secondAttribute="bottom" constant="12" id="iQO-C7-33c"/>
-                            <constraint firstItem="dvB-iV-0co" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="ogu-Qx-tUc"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0e2-JM-dCu" secondAttribute="trailing" constant="40" id="mMW-0I-VFq"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dvB-iV-0co" secondAttribute="trailing" constant="40" id="tgg-uF-vrg"/>
                             <constraint firstAttribute="bottom" secondItem="0e2-JM-dCu" secondAttribute="bottom" constant="20" id="vgk-Cn-0l0"/>
                             <constraint firstItem="ax0-SD-wBR" firstAttribute="centerX" secondItem="X2D-tt-SZb" secondAttribute="centerX" id="xj8-Pl-BBo"/>
                         </constraints>
