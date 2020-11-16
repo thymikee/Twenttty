@@ -5,19 +5,19 @@
 "3YY-gC-Qra.title" = "Start beim Login";
 
 /* Class = "NSMenuItem"; title = "Quit Twenttty"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Beenden Sie Twenttty";
+"4sb-4s-VLi.title" = "Twenttty beenden";
 
 /* Class = "NSMenuItem"; title = "About"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "Über";
+"5kV-Vb-QxS.title" = "Über Twenttty";
 
 /* Class = "NSTextFieldCell"; title = "Copyright © Michał Pierzchała"; ObjectID = "ejY-5k-kYs"; */
-"ejY-5k-kYs.title" = "Urheberrecht © Michał Pierzchała";
+"ejY-5k-kYs.title" = "Copyright © Michał Pierzchała";
 
 /* Class = "NSMenuItem"; title = "Mute"; ObjectID = "l3T-1z-so3"; Note = "play sounds"; */
 "l3T-1z-so3.title" = "Stumm";
 
 /* Class = "NSWindow"; title = "About"; ObjectID = "qbr-pc-xom"; */
-"qbr-pc-xom.title" = "Über";
+"qbr-pc-xom.title" = "Über Twenttty";
 
 /* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "z2C-eW-6ZQ"; */
 "z2C-eW-6ZQ.title" = "Version 1.0";

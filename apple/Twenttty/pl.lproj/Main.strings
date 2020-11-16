@@ -2,13 +2,13 @@
 "4sb-4s-VLi.title" = "Zakończ Twenttty";
 
 /* Class = "NSMenuItem"; title = "About"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "O Twenttty";
+"5kV-Vb-QxS.title" = "O aplikacji...";
 
 /* Class = "NSTextFieldCell"; title = "Copyright © Michał Pierzchała"; ObjectID = "ejY-5k-kYs"; */
-"ejY-5k-kYs.title" = "Prawa autorskie © Michał Pierzchała";
+"ejY-5k-kYs.title" = "Copyright © Michał Pierzchała";
 
 /* Class = "NSWindow"; title = "About"; ObjectID = "qbr-pc-xom"; */
-"qbr-pc-xom.title" = "O Twenttty";
+"qbr-pc-xom.title" = "Twenttty";
 
 /* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "z2C-eW-6ZQ"; */
 "z2C-eW-6ZQ.title" = "Wersja 1.0";
@@ -20,8 +20,8 @@
 "l3T-1z-so3.title" = "Wycisz";
 
 /* Class = "NSMenuItem"; title = "Launch at Login"; ObjectID = "3YY-gC-Qra"; */
-"3YY-gC-Qra.title" = "Uruchom przy Logowaniu";
+"3YY-gC-Qra.title" = "Uruchom przy logowaniu";
 
 /* Class = "NSMenuItem"; title = "⚠️ Allow Notifications"; ObjectID = "24I-uD-pTC"; */
-"24I-uD-pTC.title" = "⚠️ Zezwól na Powiadomienia";
+"24I-uD-pTC.title" = "⚠️ Zezwól na powiadomienia";
 
