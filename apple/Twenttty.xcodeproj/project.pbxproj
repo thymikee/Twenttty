@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,9 +19,9 @@
 		20B795F823B411D60042B081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B795F723B411D60042B081 /* ViewController.swift */; };
 		20B795FA23B411DA0042B081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B795F923B411DA0042B081 /* Assets.xcassets */; };
 		20B795FD23B411DA0042B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B795FB23B411DA0042B081 /* Main.storyboard */; };
-		20B7963B23B911740042B081 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7963A23B911730042B081 /* LaunchAtLogin.framework */; };
 		20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7963E23B964660042B081 /* ActivityStatus.swift */; };
 		20BA915324F6D52C0038381D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20BA915524F6D52C0038381D /* Localizable.strings */; };
+		79BF12A82DA4741100B00F48 /* LaunchAtLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF12A72DA4741100B00F48 /* LaunchAtLogin.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +40,11 @@
 		20B795FC23B411DA0042B081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B795FE23B411DA0042B081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B795FF23B411DA0042B081 /* Twenttty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twenttty.entitlements; sourceTree = "<group>"; };
-		20B7963A23B911730042B081 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		20B7963E23B964660042B081 /* ActivityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatus.swift; sourceTree = "<group>"; };
 		20BA915024F6D3C40038381D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		20BA915424F6D52C0038381D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		20BA915624F6D5300038381D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79BF12A72DA4741100B00F48 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LaunchAtLogin.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B7963B23B911740042B081 /* LaunchAtLogin.framework in Frameworks */,
+				79BF12A82DA4741100B00F48 /* LaunchAtLogin.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 		20B7963123B908210042B081 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				20B7963A23B911730042B081 /* LaunchAtLogin.framework */,
+				79BF12A72DA4741100B00F48 /* LaunchAtLogin.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,13 +189,13 @@
 /* Begin PBXShellScriptBuildPhase section */
 		20B7963C23B911AC0042B081 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/LaunchAtLogin.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -220,7 +220,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -391,6 +391,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Twenttty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -416,6 +417,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Twenttty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
