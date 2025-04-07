@@ -21,7 +21,7 @@
 		20B795FD23B411DA0042B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B795FB23B411DA0042B081 /* Main.storyboard */; };
 		20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7963E23B964660042B081 /* ActivityStatus.swift */; };
 		20BA915324F6D52C0038381D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20BA915524F6D52C0038381D /* Localizable.strings */; };
-		79BF12A82DA4741100B00F48 /* LaunchAtLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF12A72DA4741100B00F48 /* LaunchAtLogin.xcframework */; };
+		79BF12AE2DA47A5800B00F48 /* LaunchAtLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF12AD2DA47A5800B00F48 /* LaunchAtLogin.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,7 @@
 		20BA915024F6D3C40038381D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		20BA915424F6D52C0038381D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		20BA915624F6D5300038381D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		79BF12A72DA4741100B00F48 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LaunchAtLogin.xcframework; sourceTree = "<group>"; };
+		79BF12AD2DA47A5800B00F48 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LaunchAtLogin.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79BF12A82DA4741100B00F48 /* LaunchAtLogin.xcframework in Frameworks */,
+				79BF12AE2DA47A5800B00F48 /* LaunchAtLogin.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 		20B7963123B908210042B081 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79BF12A72DA4741100B00F48 /* LaunchAtLogin.xcframework */,
+				79BF12AD2DA47A5800B00F48 /* LaunchAtLogin.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +207,7 @@
 		};
 		20B7963D23B959200042B081 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
