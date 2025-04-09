@@ -21,7 +21,7 @@
 		20B795FD23B411DA0042B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B795FB23B411DA0042B081 /* Main.storyboard */; };
 		20B7963F23B964660042B081 /* ActivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7963E23B964660042B081 /* ActivityStatus.swift */; };
 		20BA915324F6D52C0038381D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20BA915524F6D52C0038381D /* Localizable.strings */; };
-		79BF12AE2DA47A5800B00F48 /* LaunchAtLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF12AD2DA47A5800B00F48 /* LaunchAtLogin.xcframework */; };
+		79FEA1882DA7124B003B74E3 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 79FEA1872DA7124B003B74E3 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,6 @@
 		20BA915024F6D3C40038381D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		20BA915424F6D52C0038381D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		20BA915624F6D5300038381D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		79BF12AD2DA47A5800B00F48 /* LaunchAtLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LaunchAtLogin.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79BF12AE2DA47A5800B00F48 /* LaunchAtLogin.xcframework in Frameworks */,
+				79FEA1882DA7124B003B74E3 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +109,6 @@
 		20B7963123B908210042B081 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79BF12AD2DA47A5800B00F48 /* LaunchAtLogin.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,8 +123,7 @@
 				20B795EE23B411D60042B081 /* Sources */,
 				20B795EF23B411D60042B081 /* Frameworks */,
 				20B795F023B411D60042B081 /* Resources */,
-				20B7963C23B911AC0042B081 /* ShellScript */,
-				20B7963D23B959200042B081 /* ShellScript */,
+				79FEA1892DA71287003B74E3 /* Launch at Login Helper */,
 			);
 			buildRules = (
 			);
@@ -162,6 +159,9 @@
 				pl,
 			);
 			mainGroup = 20B795E923B411D60042B081;
+			packageReferences = (
+				79FEA1862DA7124B003B74E3 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
+			);
 			productRefGroup = 20B795F323B411D60042B081 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,7 +187,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20B7963C23B911AC0042B081 /* ShellScript */ = {
+		79FEA1892DA71287003B74E3 /* Launch at Login Helper */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -197,31 +197,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Launch at Login Helper";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-		20B7963D23B959200042B081 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -391,7 +374,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Twenttty/Info.plist;
@@ -417,7 +399,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Twenttty/Info.plist;
@@ -455,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79FEA1862DA7124B003B74E3 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79FEA1872DA7124B003B74E3 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79FEA1862DA7124B003B74E3 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20B795EA23B411D60042B081 /* Project object */;
 }
